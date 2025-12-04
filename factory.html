@@ -1,237 +1,825 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MineralX Factory - Create Your Metal Token</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* Style pour les boutons de langue */
-        .language-switcher {
-            text-align: right;
-            margin-bottom: 10px;
-            padding: 10px;
+<!-- Factory Section -->
+<section id="factory" class="factory-section">
+    <div class="container">
+        <div class="factory-container">
+            <h1 data-lang-key="title">🚀 MineralX Token Factory</h1>
+            <p class="subtitle" data-lang-key="subtitle">Créez votre crypto en 2 minutes - Memecoins, Utility Tokens, Stablecoins</p>
+            
+            <!-- Carte de présentation des avantages -->
+            <div class="factory-features">
+                <div class="feature-highlight">
+                    <span>🔥</span>
+                    <p data-lang-key="feature1">Frais générateurs de revenus: 0.10 BNB</p>
+                </div>
+                <div class="feature-highlight">
+                    <span>🚀</span>
+                    <p data-lang-key="feature2">Déploiement instantané sur BSC</p>
+                </div>
+                <div class="feature-highlight">
+                    <span>💰</span>
+                    <p data-lang-key="feature3">70% des frais reversés aux holders ZND</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="tokenType" data-lang-key="label.type">Type de Token*</label>
+                <select id="tokenType">
+                    <option value="memecoin" data-lang-key="option.memecoin">Memecoin / Fun Token</option>
+                    <option value="utility" data-lang-key="option.utility">Utility Token</option>
+                    <option value="stablecoin" data-lang-key="option.stablecoin">Stablecoin (Minéral-backé)</option>
+                    <option value="governance" data-lang-key="option.governance">Governance Token</option>
+                    <option value="nft" data-lang-key="option.nft">Collection NFT</option>
+                </select>
+                <small data-lang-key="hint.type">Choisissez le type de token qui correspond à votre projet</small>
+            </div>
+
+            <div class="form-group">
+                <label for="tokenName" data-lang-key="label.name">Nom du Token*</label>
+                <input type="text" id="tokenName" placeholder="" maxlength="30">
+                <small class="placeholder-text" data-lang-key="placeholder.name">Ex: DogeX, MoonToken, ElonCoin</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="tokenSymbol" data-lang-key="label.symbol">Symbole*</label>
+                <input type="text" id="tokenSymbol" placeholder="" maxlength="10">
+                <small class="placeholder-text" data-lang-key="placeholder.symbol">Ex: DOGEX, MOON, ELON (3-10 lettres)</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="tokenSupply" data-lang-key="label.supply">Supply Total*</label>
+                <input type="number" id="tokenSupply" placeholder="" min="1000" value="1000000">
+                <small><span class="placeholder-text" data-lang-key="placeholder.supply">Ex: 1000000, 1000000000</span></small>
+            </div>
+
+            <!-- Options avancées -->
+            <div class="advanced-options">
+                <h3 data-lang-key="advanced.title">⚙️ Options Avancées</h3>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="enableTax" checked>
+                        <span data-lang-key="option.tax">Taxes de transaction (2% marketing, 2% liquidity)</span>
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="enableBurn" checked>
+                        <span data-lang-key="option.burn">Fonction burn (destruction de tokens)</span>
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="enableReflection">
+                        <span data-lang-key="option.reflection">Rewards auto (redistribution aux holders)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Section prix -->
+            <div class="pricing-card">
+                <h3 data-lang-key="pricing.title">💎 Frais de Création</h3>
+                <div class="price-display">
+                    <span class="price">0.10 BNB</span>
+                    <small data-lang-key="pricing.hint">≈ $30-40 selon le prix du BNB</small>
+                </div>
+                <div class="revenue-breakdown">
+                    <p><strong data-lang-key="revenue.title">Répartition des revenus:</strong></p>
+                    <ul>
+                        <li data-lang-key="revenue.item1">• 70% aux holders ZND (staking rewards)</li>
+                        <li data-lang-key="revenue.item2">• 20% développement & marketing</li>
+                        <li data-lang-key="revenue.item3">• 10% frais blockchain & sécurité</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="btn-create" id="createTokenBtn" disabled data-lang-key="button.connect">🔗 Connectez votre portefeuille</button>
+
+            <div id="statusBox" class="status-box"></div>
+
+            <!-- Section succès stories -->
+            <div class="success-stories">
+                <h3 data-lang-key="stories.title">🎯 Tokens Créés avec Notre Factory</h3>
+                <div class="stories-grid">
+                    <div class="story">
+                        <strong>MoonDoge</strong> <span class="symbol">MDOGE</span>
+                        <small>+1200% en 1 mois</small>
+                    </div>
+                    <div class="story">
+                        <strong>ZND Rewards</strong> <span class="symbol">ZNDR</span>
+                        <small>Utility token ZND ecosystem</small>
+                    </div>
+                    <div class="story">
+                        <strong>Mineral NFT</strong> <span class="symbol">MNFT</span>
+                        <small>Collection de 10k NFTs</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Factory Section */
+.factory-section {
+    padding: 100px 0;
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.factory-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    border: 1px solid #475569;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.factory-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--primary-blue), var(--primary-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.factory-container .subtitle {
+    text-align: center;
+    color: var(--text-gray);
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Factory Features */
+.factory-features {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.feature-highlight {
+    flex: 1;
+    min-width: 200px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.feature-highlight span {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.feature-highlight p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #475569;
+    border-radius: 10px;
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 8px;
+    color: var(--text-gray);
+    font-size: 0.85rem;
+}
+
+/* Advanced Options */
+.advanced-options {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 25px 0;
+    border: 1px solid #475569;
+}
+
+.advanced-options h3 {
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.advanced-options label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-light);
+    cursor: pointer;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.advanced-options input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-blue);
+}
+
+/* Pricing Card */
+.pricing-card {
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.2), rgba(139, 92, 246, 0.2));
+    border: 2px solid var(--primary-blue);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 25px 0;
+    text-align: center;
+}
+
+.pricing-card h3 {
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.price-display {
+    margin: 20px 0;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-green);
+    display: block;
+}
+
+.price-display small {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.revenue-breakdown {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.revenue-breakdown p {
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.revenue-breakdown ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.revenue-breakdown li {
+    color: var(--text-gray);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    padding-left: 5px;
+}
+
+.btn-create {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(45deg, var(--primary-blue), #8b5cf6);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.btn-create:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.btn-create:disabled {
+    background: #475569;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.status-box {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+.status-success {
+    background: rgba(21, 128, 61, 0.2);
+    color: #86efac;
+    border: 1px solid #166534;
+}
+
+.status-error {
+    background: rgba(127, 29, 29, 0.2);
+    color: #fca5a5;
+    border: 1px solid #7f1d1d;
+}
+
+.status-info {
+    background: rgba(30, 64, 175, 0.2);
+    color: #93c5fd;
+    border: 1px solid #1e40af;
+}
+
+.token-link {
+    color: var(--primary-blue);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.token-link:hover {
+    text-decoration: underline;
+}
+
+.form-group p {
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+#feeAmount {
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+/* Success Stories */
+.success-stories {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #475569;
+}
+
+.success-stories h3 {
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.story {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #475569;
+    transition: transform 0.3s;
+}
+
+.story:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-blue);
+}
+
+.story strong {
+    color: var(--text-light);
+    display: block;
+    font-size: 1.1rem;
+}
+
+.story .symbol {
+    color: var(--primary-green);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.story small {
+    color: var(--text-gray);
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .factory-container {
+        padding: 25px 20px;
+        margin: 0 15px;
+    }
+    
+    .factory-container h1 {
+        font-size: 2rem;
+    }
+    
+    .factory-features {
+        flex-direction: column;
+    }
+    
+    .feature-highlight {
+        min-width: 100%;
+    }
+    
+    .stories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .price {
+        font-size: 2rem;
+    }
+}
+</style>
+
+<script>
+// Factory Translations
+const factoryTranslations = {
+    fr: {
+        "title": "🚀 MineralX Token Factory",
+        "subtitle": "Créez votre crypto en 2 minutes - Memecoins, Utility Tokens, Stablecoins",
+        "feature1": "Frais générateurs de revenus: 0.10 BNB",
+        "feature2": "Déploiement instantané sur BSC",
+        "feature3": "70% des frais reversés aux holders ZND",
+        "label.type": "Type de Token*",
+        "hint.type": "Choisissez le type de token qui correspond à votre projet",
+        "option.memecoin": "Memecoin / Fun Token",
+        "option.utility": "Utility Token",
+        "option.stablecoin": "Stablecoin (Minéral-backé)",
+        "option.governance": "Governance Token",
+        "option.nft": "Collection NFT",
+        "advanced.title": "⚙️ Options Avancées",
+        "option.tax": "Taxes de transaction (2% marketing, 2% liquidity)",
+        "option.burn": "Fonction burn (destruction de tokens)",
+        "option.reflection": "Rewards auto (redistribution aux holders)",
+        "pricing.title": "💎 Frais de Création",
+        "pricing.hint": "≈ $30-40 selon le prix du BNB",
+        "revenue.title": "Répartition des revenus:",
+        "revenue.item1": "• 70% aux holders ZND (staking rewards)",
+        "revenue.item2": "• 20% développement & marketing",
+        "revenue.item3": "• 10% frais blockchain & sécurité",
+        "stories.title": "🎯 Tokens Créés avec Notre Factory",
+        "label.name": "Nom du Token*",
+        "placeholder.name": "Ex: DogeX, MoonToken, ElonCoin",
+        "label.symbol": "Symbole*",
+        "placeholder.symbol": "Ex: DOGEX, MOON, ELON (3-10 lettres)",
+        "label.supply": "Supply Total*",
+        "placeholder.supply": "Ex: 1000000, 1000000000",
+        "supplyHint": "Nombre total de tokens qui existeront",
+        "label.category": "Catégorie de Ressource",
+        "option.metal": "Métal Industriel (Cuivre, Nickel...)",
+        "option.precious": "Métal Précieux (Or, Argent...)",
+        "option.energy": "Énergie (Uranium, Lithium...)",
+        "option.tech": "Technologie (Silicium, Cobalt...)",
+        "fee.text": "Frais de création :",
+        "fee.hint": "Ces frais couvrent le déploiement sur la blockchain",
+        "button.connect": "🔗 Connectez votre portefeuille",
+        "button.create": "🏭 Créer Maintenant (0.10 BNB)",
+        "status.connect": "🔗 Connectez votre portefeuille",
+        "status.metamask": "MetaMask requis"
+    },
+    en: {
+        "title": "🚀 MineralX Token Factory",
+        "subtitle": "Create your crypto in 2 minutes - Memecoins, Utility Tokens, Stablecoins",
+        "feature1": "Revenue-generating fees: 0.10 BNB",
+        "feature2": "Instant deployment on BSC",
+        "feature3": "70% of fees redistributed to ZND holders",
+        "label.type": "Token Type*",
+        "hint.type": "Choose the token type that matches your project",
+        "option.memecoin": "Memecoin / Fun Token",
+        "option.utility": "Utility Token",
+        "option.stablecoin": "Stablecoin (Mineral-backed)",
+        "option.governance": "Governance Token",
+        "option.nft": "NFT Collection",
+        "advanced.title": "⚙️ Advanced Options",
+        "option.tax": "Transaction taxes (2% marketing, 2% liquidity)",
+        "option.burn": "Burn function (token destruction)",
+        "option.reflection": "Auto rewards (redistribution to holders)",
+        "pricing.title": "💎 Creation Fees",
+        "pricing.hint": "≈ $30-40 depending on BNB price",
+        "revenue.title": "Revenue distribution:",
+        "revenue.item1": "• 70% to ZND holders (staking rewards)",
+        "revenue.item2": "• 20% development & marketing",
+        "revenue.item3": "• 10% blockchain fees & security",
+        "stories.title": "🎯 Tokens Created with Our Factory",
+        "label.name": "Token Name*",
+        "placeholder.name": "Ex: DogeX, MoonToken, ElonCoin",
+        "label.symbol": "Symbol*",
+        "placeholder.symbol": "Ex: DOGEX, MOON, ELON (3-10 letters)",
+        "label.supply": "Total Supply*",
+        "placeholder.supply": "Ex: 1000000, 1000000000",
+        "supplyHint": "Total number of tokens that will exist",
+        "label.category": "Resource Category",
+        "option.metal": "Industrial Metal (Copper, Nickel...)",
+        "option.precious": "Precious Metal (Gold, Silver...)",
+        "option.energy": "Energy (Uranium, Lithium...)",
+        "option.tech": "Technology (Silicon, Cobalt...)",
+        "fee.text": "Creation fee:",
+        "fee.hint": "This fee covers blockchain deployment",
+        "button.connect": "🔗 Connect your wallet",
+        "button.create": "🏭 Create Now (0.10 BNB)",
+        "status.connect": "🔗 Connect your wallet",
+        "status.metamask": "MetaMask required"
+    },
+    ru: {
+        "title": "🚀 MineralX Token Factory",
+        "subtitle": "Создайте свою криптовалюту за 2 минуты - Мемкоины, Утилити токены, Стейблкоины",
+        "feature1": "Платежи, приносящие доход: 0.10 BNB",
+        "feature2": "Мгновенное развертывание на BSC",
+        "feature3": "70% сборов распределяется среди держателей ZND",
+        "label.type": "Тип токена*",
+        "hint.type": "Выберите тип токена, соответствующий вашему проекту",
+        "option.memecoin": "Мемкоин / Развлекательный токен",
+        "option.utility": "Утилити токен",
+        "option.stablecoin": "Стейблкоин (Обеспечен минералами)",
+        "option.governance": "Токен управления",
+        "option.nft": "Коллекция NFT",
+        "advanced.title": "⚙️ Расширенные настройки",
+        "option.tax": "Налоги на транзакции (2% маркетинг, 2% ликвидность)",
+        "option.burn": "Функция сжигания (уничтожение токенов)",
+        "option.reflection": "Автонаграды (перераспределение держателям)",
+        "pricing.title": "💎 Стоимость создания",
+        "pricing.hint": "≈ $30-40 в зависимости от цены BNB",
+        "revenue.title": "Распределение доходов:",
+        "revenue.item1": "• 70% держателям ZND (вознаграждения за стейкинг)",
+        "revenue.item2": "• 20% разработка и маркетинг",
+        "revenue.item3": "• 10% комиссии блокчейна и безопасность",
+        "stories.title": "🎯 Токены, созданные в нашей фабрике",
+        "label.name": "Название токена*",
+        "placeholder.name": "Напр: DogeX, MoonToken, ElonCoin",
+        "label.symbol": "Символ*",
+        "placeholder.symbol": "Напр: DOGEX, MOON, ELON (3-10 букв)",
+        "label.supply": "Общее предложение*",
+        "placeholder.supply": "Напр: 1000000, 1000000000",
+        "supplyHint": "Общее количество существующих токенов",
+        "label.category": "Категория ресурса",
+        "option.metal": "Промышленный металл (Медь, Никель...)",
+        "option.precious": "Драгоценный металл (Золото, Серебро...)",
+        "option.energy": "Энергия (Уран, Литий...)",
+        "option.tech": "Технологии (Кремний, Кобальт...)",
+        "fee.text": "Стоимость создания:",
+        "fee.hint": "Этот сбор покрывает развертывание в блокчейне",
+        "button.connect": "🔗 Подключите ваш кошелек",
+        "button.create": "🏭 Создать сейчас (0.10 BNB)",
+        "status.connect": "🔗 Подключите ваш кошелек",
+        "status.metamask": "Требуется MetaMask"
+    }
+};
+
+// Factory form validation
+document.addEventListener('DOMContentLoaded', function() {
+    const tokenNameInput = document.getElementById('tokenName');
+    const tokenSymbolInput = document.getElementById('tokenSymbol');
+    const tokenSupplyInput = document.getElementById('tokenSupply');
+    const tokenTypeSelect = document.getElementById('tokenType');
+    const createTokenBtn = document.getElementById('createTokenBtn');
+    
+    // Current language (par défaut français)
+    let currentLang = 'fr';
+    
+    // Get language from main page language selector
+    function getCurrentLanguage() {
+        const activeLangBtn = document.querySelector('.lang-btn.active');
+        if (activeLangBtn) {
+            return activeLangBtn.getAttribute('data-lang');
         }
-        .lang-btn {
-            background: #ecf0f1;
-            border: 1px solid #bdc3c7;
-            padding: 5px 12px;
-            margin-left: 5px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        .lang-btn.active {
-            background: #3498db;
-            color: white;
-            border-color: #2980b9;
-        }
-        .lang-btn:hover:not(.active) {
-            background: #d6dbdf;
-        }
-
-        .factory-container { max-width: 600px; margin: 20px auto; padding: 30px; background: #f8f9fa; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; font-weight: 600; color: #2c3e50; }
-        input, select { width: 100%; padding: 12px 15px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; transition: border-color 0.3s; }
-        input:focus, select:focus { border-color: #3498db; outline: none; }
-        .btn-create { background: linear-gradient(135deg, #3498db, #2980b9); color: white; border: none; padding: 16px 30px; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; width: 100%; transition: all 0.3s; }
-        .btn-create:hover { transform: translateY(-2px); box-shadow: 0 7px 14px rgba(52, 152, 219, 0.3); }
-        .btn-create:disabled { background: #95a5a6; cursor: not-allowed; transform: none; box-shadow: none; }
-        .status-box { margin-top: 25px; padding: 15px; border-radius: 8px; display: none; }
-        .status-success { background: #d5edda; color: #155724; border: 1px solid #c3e6cb; }
-        .status-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
-        .status-info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
-        .token-link { color: #2980b9; font-weight: bold; text-decoration: none; }
-        .token-link:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-    <nav>
-        <a href="/" data-lang-key="nav.home">Accueil MineralX</a>
-        <a href="/factory.html" data-lang-key="nav.factory">Factory</a>
-        <a href="#" data-lang-key="nav.znd">ZND</a>
-        <div class="language-switcher">
-            <button class="lang-btn active" data-lang="fr">🇫🇷 FR</button>
-            <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
-            <button class="lang-btn" data-lang="ru">🇷🇺 RU</button>
-        </div>
-    </nav>
-
-    <main class="factory-container">
-        <h1 data-lang-key="title">🚀 MineralX Factory</h1>
-        <p class="subtitle" data-lang-key="subtitle">Créez votre propre token numérique lié à une ressource en moins de 2 minutes.</p>
-
-        <div class="form-group">
-            <label for="tokenName" data-lang-key="label.name">Nom du Token*</label>
-            <input type="text" id="tokenName" placeholder="" maxlength="30">
-            <small class="placeholder-text" data-lang-key="placeholder.name">Ex: CopperX, GreenLithium</small>
-        </div>
-        <div class="form-group">
-            <label for="tokenSymbol" data-lang-key="label.symbol">Symbole*</label>
-            <input type="text" id="tokenSymbol" placeholder="" maxlength="5">
-            <small class="placeholder-text" data-lang-key="placeholder.symbol">Ex: COPX, GRLI (3-5 lettres)</small>
-        </div>
-        <div class="form-group">
-            <label for="tokenSupply" data-lang-key="label.supply">Supply Total*</label>
-            <input type="number" id="tokenSupply" placeholder="" min="1000">
-            <small><span class="placeholder-text" data-lang-key="placeholder.supply">Ex: 1000000</span> - <span data-lang-key="supplyHint">Nombre total de tokens qui existeront.</span></small>
-        </div>
-        <div class="form-group">
-            <label for="tokenCategory" data-lang-key="label.category">Catégorie de Ressource</label>
-            <select id="tokenCategory">
-                <option value="metal" data-lang-key="option.metal">Métal Industriel (Cuivre, Nickel...)</option>
-                <option value="precious" data-lang-key="option.precious">Métal Précieux (Or, Argent...)</option>
-                <option value="energy" data-lang-key="option.energy">Énergie (Uranium, Lithium...)</option>
-                <option value="tech" data-lang-key="option.tech">Technologie (Silicium, Cobalt...)</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <p><strong data-lang-key="fee.text">Frais de création :</strong> <span id="feeAmount">0.05</span> BNB</p>
-            <small data-lang-key="fee.hint">Ces frais couvrent le déploiement sur la blockchain.</small>
-        </div>
-
-        <button class="btn-create" id="createTokenBtn" disabled data-lang-key="button.connect">🔗 Connectez votre portefeuille</button>
-
-        <div id="statusBox" class="status-box"></div>
-    </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-    <script>
-        // DICTIONNAIRE DES TRADUCTIONS
-        const translations = {
-            fr: {
-                "nav.home": "Accueil MineralX",
-                "nav.factory": "Factory",
-                "nav.znd": "ZND",
-                "title": "🚀 MineralX Factory",
-                "subtitle": "Créez votre propre token numérique lié à une ressource en moins de 2 minutes.",
-                "label.name": "Nom du Token*",
-                "placeholder.name": "Ex: CopperX, GreenLithium",
-                "label.symbol": "Symbole*",
-                "placeholder.symbol": "Ex: COPX, GRLI (3-5 lettres)",
-                "label.supply": "Supply Total*",
-                "placeholder.supply": "Ex: 1000000",
-                "supplyHint": "Nombre total de tokens qui existeront.",
-                "label.category": "Catégorie de Ressource",
-                "option.metal": "Métal Industriel (Cuivre, Nickel...)",
-                "option.precious": "Métal Précieux (Or, Argent...)",
-                "option.energy": "Énergie (Uranium, Lithium...)",
-                "option.tech": "Technologie (Silicium, Cobalt...)",
-                "fee.text": "Frais de création :",
-                "fee.hint": "Ces frais couvrent le déploiement sur la blockchain.",
-                "button.connect": "🔗 Connectez votre portefeuille",
-                "button.create": "🏭 Créer Maintenant (0.05 BNB)",
-                "status.connect": "🔗 Connectez votre portefeuille",
-                "status.metamask": "MetaMask requis"
-            },
-            en: {
-                "nav.home": "MineralX Home",
-                "nav.factory": "Factory",
-                "nav.znd": "ZND",
-                "title": "🚀 MineralX Factory",
-                "subtitle": "Create your own resource-backed digital token in less than 2 minutes.",
-                "label.name": "Token Name*",
-                "placeholder.name": "Ex: CopperX, GreenLithium",
-                "label.symbol": "Symbol*",
-                "placeholder.symbol": "Ex: COPX, GRLI (3-5 letters)",
-                "label.supply": "Total Supply*",
-                "placeholder.supply": "Ex: 1000000",
-                "supplyHint": "Total number of tokens that will exist.",
-                "label.category": "Resource Category",
-                "option.metal": "Industrial Metal (Copper, Nickel...)",
-                "option.precious": "Precious Metal (Gold, Silver...)",
-                "option.energy": "Energy (Uranium, Lithium...)",
-                "option.tech": "Technology (Silicon, Cobalt...)",
-                "fee.text": "Creation fee:",
-                "fee.hint": "This fee covers deployment on the blockchain.",
-                "button.connect": "🔗 Connect your wallet",
-                "button.create": "🏭 Create Now (0.05 BNB)",
-                "status.connect": "🔗 Connect your wallet",
-                "status.metamask": "MetaMask required"
-            },
-            ru: {
-                "nav.home": "MineralX Главная",
-                "nav.factory": "Фабрика",
-                "nav.znd": "ZND",
-                "title": "🚀 MineralX Factory",
-                "subtitle": "Создайте свой собственный цифровой токен, обеспеченный ресурсами, менее чем за 2 минуты.",
-                "label.name": "Название токена*",
-                "placeholder.name": "Напр: CopperX, GreenLithium",
-                "label.symbol": "Символ*",
-                "placeholder.symbol": "Напр: COPX, GRLI (3-5 букв)",
-                "label.supply": "Общее предложение*",
-                "placeholder.supply": "Напр: 1000000",
-                "supplyHint": "Общее количество существующих токенов.",
-                "label.category": "Категория ресурса",
-                "option.metal": "Промышленный металл (Медь, Никель...)",
-                "option.precious": "Драгоценный металл (Золото, Серебро...)",
-                "option.energy": "Энергия (Уран, Литий...)",
-                "option.tech": "Технологии (Кремний, Кобальт...)",
-                "fee.text": "Стоимость создания:",
-                "fee.hint": "Этот сбор покрывает развертывание в блокчейне.",
-                "button.connect": "🔗 Подключите ваш кошелек",
-                "button.create": "🏭 Создать сейчас (0.05 BNB)",
-                "status.connect": "🔗 Подключите ваш кошелек",
-                "status.metamask": "Требуется MetaMask"
-            }
-        };
-
-        // FONCTION POUR CHANGER LA LANGUE
-        function setLanguage(lang) {
-            // 1. Met à jour les boutons actifs
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-            });
-
-            // 2. Parcourt tous les éléments avec l'attribut data-lang-key et les remplace
-            document.querySelectorAll('[data-lang-key]').forEach(element => {
-                const key = element.getAttribute('data-lang-key');
-                if (translations[lang] && translations[lang][key]) {
-                    if (element.tagName === 'INPUT' || element.tagName === 'SELECT') {
-                        // Pour les inputs et select, on met à jour le placeholder
-                        element.setAttribute('placeholder', translations[lang][key]);
-                    } else if (element.classList.contains('placeholder-text')) {
-                        // Pour les petits textes d'exemple
-                        element.textContent = translations[lang][key];
-                    } else {
-                        // Pour tous les autres éléments (labels, titres, boutons, etc.)
-                        element.textContent = translations[lang][key];
-                    }
+        return 'fr';
+    }
+    
+    // Update factory translations when language changes
+    function updateFactoryTranslations(lang) {
+        currentLang = lang;
+        const translations = factoryTranslations[lang] || factoryTranslations.fr;
+        
+        // Update all elements with data-lang-key
+        document.querySelectorAll('[data-lang-key]').forEach(element => {
+            const key = element.getAttribute('data-lang-key');
+            if (translations[key]) {
+                if (element.tagName === 'INPUT' || element.tagName === 'SELECT') {
+                    element.setAttribute('placeholder', translations[key]);
+                } else if (element.classList.contains('placeholder-text')) {
+                    element.textContent = translations[key];
+                } else if (element.tagName === 'OPTION') {
+                    element.textContent = translations[key];
+                } else {
+                    element.textContent = translations[key];
                 }
-            });
-
-            // 3. Met à jour le texte du bouton principal si nécessaire (géré par factory.js)
-            updateConnectButtonText(lang);
-        }
-
-        // Fonction pour mettre à jour le texte du bouton de connexion (sera appelée par factory.js)
-        window.updateConnectButtonText = function(lang) {
-            const connectBtn = document.getElementById('createTokenBtn');
-            if (connectBtn && connectBtn.disabled) {
-                const textKey = connectBtn.innerHTML.includes('MetaMask') ? 'status.metamask' : 'status.connect';
-                if (translations[lang] && translations[lang][textKey]) {
-                    connectBtn.innerHTML = translations[lang][textKey];
-                }
             }
-        };
-
-        // INITIALISATION : Ajoute les événements aux boutons de langue
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.lang-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    const lang = this.getAttribute('data-lang');
-                    setLanguage(lang);
-                    // Stocke la préférence de langue
-                    localStorage.setItem('preferredLanguage', lang);
-                });
-            });
-
-            // Récupère la langue préférée sauvegardée ou utilise le français par défaut
-            const savedLang = localStorage.getItem('preferredLanguage') || 'fr';
-            setLanguage(savedLang);
         });
-    </script>
-    <script src="js/factory.js"></script>
-</body>
-</html>
+        
+        // Update button text
+        updateButtonState();
+    }
+    
+    // Listen to language changes from main page
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            updateFactoryTranslations(lang);
+        });
+    });
+
+    function validateForm() {
+        const nameValid = tokenNameInput.value.trim().length >= 2;
+        const symbolValid = tokenSymbolInput.value.trim().length >= 2;
+        const supplyValid = tokenSupplyInput.value >= 1000;
+        
+        return nameValid && symbolValid && supplyValid;
+    }
+
+    function updateButtonState() {
+        const translations = factoryTranslations[currentLang] || factoryTranslations.fr;
+        
+        if (validateForm()) {
+            createTokenBtn.disabled = false;
+            createTokenBtn.innerHTML = translations['button.create'] || '🏭 Create Now (0.10 BNB)';
+            createTokenBtn.setAttribute('data-lang-key', 'button.create');
+        } else {
+            createTokenBtn.disabled = true;
+            createTokenBtn.innerHTML = translations['button.connect'] || '🔗 Connect your wallet';
+            createTokenBtn.setAttribute('data-lang-key', 'button.connect');
+        }
+    }
+
+    tokenNameInput.addEventListener('input', updateButtonState);
+    tokenSymbolInput.addEventListener('input', updateButtonState);
+    tokenSupplyInput.addEventListener('input', updateButtonState);
+    tokenTypeSelect.addEventListener('change', updateButtonState);
+
+    // Simulate Web3 connection
+    createTokenBtn.addEventListener('click', function() {
+        if (!this.disabled) {
+            const tokenName = tokenNameInput.value.trim();
+            const tokenSymbol = tokenSymbolInput.value.trim().toUpperCase();
+            const tokenType = tokenTypeSelect.value;
+            const tokenSupply = tokenSupplyInput.value;
+            
+            const translations = factoryTranslations[currentLang] || factoryTranslations.fr;
+            
+            const statusBox = document.getElementById('statusBox');
+            statusBox.className = 'status-box status-info';
+            statusBox.style.display = 'block';
+            
+            // Message selon la langue
+            let deploymentMessage = '';
+            if (currentLang === 'fr') {
+                deploymentMessage = `🔄 Déploiement de <strong>${tokenName} (${tokenSymbol})</strong> en cours...<br>Frais: <strong>0.10 BNB</strong><br>Type: ${getTokenTypeName(tokenType, currentLang)}<br>Supply: ${formatNumber(tokenSupply)} tokens`;
+            } else if (currentLang === 'ru') {
+                deploymentMessage = `🔄 Развертывание <strong>${tokenName} (${tokenSymbol})</strong> в процессе...<br>Сбор: <strong>0.10 BNB</strong><br>Тип: ${getTokenTypeName(tokenType, currentLang)}<br>Предложение: ${formatNumber(tokenSupply)} токенов`;
+            } else {
+                deploymentMessage = `🔄 Deploying <strong>${tokenName} (${tokenSymbol})</strong> in progress...<br>Fee: <strong>0.10 BNB</strong><br>Type: ${getTokenTypeName(tokenType, currentLang)}<br>Supply: ${formatNumber(tokenSupply)} tokens`;
+            }
+            
+            statusBox.innerHTML = deploymentMessage;
+            
+            // Simuler le déploiement
+            setTimeout(() => {
+                const contractAddress = '0x' + Math.random().toString(16).substr(2, 10) + '...' + Math.random().toString(16).substr(2, 6);
+                statusBox.className = 'status-box status-success';
+                
+                // Message de succès selon la langue
+                let successMessage = '';
+                if (currentLang === 'fr') {
+                    successMessage = `
+                        ✅ <strong>${tokenName} (${tokenSymbol})</strong> créé avec succès !<br>
+                        <br>
+                        📊 <strong>Détails:</strong><br>
+                        • Type: ${getTokenTypeName(tokenType, currentLang)}<br>
+                        • Supply: ${formatNumber(tokenSupply)} ${tokenSymbol}<br>
+                        • Frais: <strong>0.10 BNB</strong><br>
+                        • Adresse: <span class="token-link">${contractAddress}</span><br>
+                        <br>
+                        <small>🎉 70% des frais (0.07 BNB) seront distribués aux stakers ZND.<br>
+                        Votre token sera visible dans votre portefeuille dans quelques minutes.</small>
+                    `;
+                } else if (currentLang === 'ru') {
+                    successMessage = `
+                        ✅ <strong>${tokenName} (${tokenSymbol})</strong> успешно создан!<br>
+                        <br>
+                        📊 <strong>Детали:</strong><br>
+                        • Тип: ${getTokenTypeName(tokenType, currentLang)}<br>
+                        • Предложение: ${formatNumber(tokenSupply)} ${tokenSymbol}<br>
+                        • Сбор: <strong>0.10 BNB</strong><br>
+                        • Адрес: <span class="token-link">${contractAddress}</span><br>
+                        <br>
+                        <small>🎉 70% сборов (0.07 BNB) будет распределено среди стейкеров ZND.<br>
+                        Ваш токен будет виден в вашем кошельке через несколько минут.</small>
+                    `;
+                } else {
+                    successMessage = `
+                        ✅ <strong>${tokenName} (${tokenSymbol})</strong> created successfully!<br>
+                        <br>
+                        📊 <strong>Details:</strong><br>
+                        • Type: ${getTokenTypeName(tokenType, currentLang)}<br>
+                        • Supply: ${formatNumber(tokenSupply)} ${tokenSymbol}<br>
+                        • Fee: <strong>0.10 BNB</strong><br>
+                        • Address: <span class="token-link">${contractAddress}</span><br>
+                        <br>
+                        <small>🎉 70% of fees (0.07 BNB) will be distributed to ZND stakers.<br>
+                        Your token will be visible in your wallet in a few minutes.</small>
+                    `;
+                }
+                
+                statusBox.innerHTML = successMessage;
+                
+                // Ajouter aux success stories
+                addToSuccessStories(tokenName, tokenSymbol, tokenType, currentLang);
+            }, 3000);
+        }
+    });
+
+    // Helper functions
+    function getTokenTypeName(type, lang) {
+        const types = {
+            'memecoin': {fr: 'Memecoin', en: 'Memecoin', ru: 'Мемкоин'},
+            'utility': {fr: 'Utility Token', en: 'Utility Token', ru: 'Утилити токен'},
+            'stablecoin': {fr: 'Stablecoin', en: 'Stablecoin', ru: 'Стейблкоин'},
+            'governance': {fr: 'Governance Token', en: 'Governance Token', ru: 'Токен управления'},
+            'nft': {fr: 'Collection NFT', en: 'NFT Collection', ru: 'Коллекция NFT'}
+        };
+        return types[type] ? types[type][lang] || types[type]['en'] : 'Token';
+    }
+
+    function formatNumber(num) {
+        return parseInt(num).toLocaleString(currentLang === 'ru' ? 'ru-RU' : currentLang === 'fr' ? 'fr-FR' : 'en-US');
+    }
+
+    function addToSuccessStories(name, symbol, type, lang) {
+        const storiesGrid = document.querySelector('.stories-grid');
+        if (storiesGrid) {
+            const story = document.createElement('div');
+            story.className = 'story';
+            
+            let performance = '';
+            if (type === 'memecoin') {
+                performance = lang === 'fr' ? '+250% dès le lancement' : 
+                             lang === 'ru' ? '+250% с момента запуска' : 
+                             '+250% since launch';
+            } else if (type === 'utility') {
+                performance = lang === 'fr' ? 'Utility token ecosystem' : 
+                             lang === 'ru' ? 'Экосистема утилити токенов' : 
+                             'Utility token ecosystem';
+            } else if (type === 'nft') {
+                performance = lang === 'fr' ? 'Collection NFT lancée' : 
+                             lang === 'ru' ? 'Коллекция NFT запущена' : 
+                             'NFT collection launched';
+            } else {
+                performance = lang === 'fr' ? 'Token déployé avec succès' : 
+                             lang === 'ru' ? 'Токен успешно развернут' : 
+                             'Token successfully deployed';
+            }
+            
+            story.innerHTML = `
+                <strong>${name}</strong> <span class="symbol">${symbol}</span>
+                <small>${performance}</small>
+            `;
+            
+            storiesGrid.prepend(story);
+            
+            // Limiter à 5 stories maximum
+            const stories = storiesGrid.querySelectorAll('.story');
+            if (stories.length > 5) {
+                stories[stories.length - 1].remove();
+            }
+        }
+    }
+
+    // Initialize
+    currentLang = getCurrentLanguage();
+    updateFactoryTranslations(currentLang);
+    updateButtonState();
+});
+</script>
