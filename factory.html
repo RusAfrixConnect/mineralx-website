@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineralX Factory - Create Your Metal Token</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Style pour les boutons de langue */
+        .language-switcher {
+            text-align: right;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .lang-btn {
+            background: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            padding: 5px 12px;
+            margin-left: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .lang-btn.active {
+            background: #3498db;
+            color: white;
+            border-color: #2980b9;
+        }
+        .lang-btn:hover:not(.active) {
+            background: #d6dbdf;
+        }
+
+        .factory-container { max-width: 600px; margin: 20px auto; padding: 30px; background: #f8f9fa; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: #2c3e50; }
+        input, select { width: 100%; padding: 12px 15px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; transition: border-color 0.3s; }
+        input:focus, select:focus { border-color: #3498db; outline: none; }
+        .btn-create { background: linear-gradient(135deg, #3498db, #2980b9); color: white; border: none; padding: 16px 30px; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; width: 100%; transition: all 0.3s; }
+        .btn-create:hover { transform: translateY(-2px); box-shadow: 0 7px 14px rgba(52, 152, 219, 0.3); }
+        .btn-create:disabled { background: #95a5a6; cursor: not-allowed; transform: none; box-shadow: none; }
+        .status-box { margin-top: 25px; padding: 15px; border-radius: 8px; display: none; }
+        .status-success { background: #d5edda; color: #155724; border: 1px solid #c3e6cb; }
+        .status-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .status-info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        .token-link { color: #2980b9; font-weight: bold; text-decoration: none; }
+        .token-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" data-lang-key="nav.home">Accueil MineralX</a>
+        <a href="/factory.html" data-lang-key="nav.factory">Factory</a>
+        <a href="#" data-lang-key="nav.znd">ZND</a>
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="fr">🇫🇷 FR</button>
+            <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+            <button class="lang-btn" data-lang="ru">🇷🇺 RU</button>
+        </div>
+    </nav>
+
+    <main class="factory-container">
+        <h1 data-lang-key="title">🚀 MineralX Factory</h1>
+        <p class="subtitle" data-lang-key="subtitle">Créez votre propre token numérique lié à une ressource en moins de 2 minutes.</p>
+
+        <div class="form-group">
+            <label for="tokenName" data-lang-key="label.name">Nom du Token*</label>
+            <input type="text" id="tokenName" placeholder="" maxlength="30">
+            <small class="placeholder-text" data-lang-key="placeholder.name">Ex: CopperX, GreenLithium</small>
+        </div>
+        <div class="form-group">
+            <label for="tokenSymbol" data-lang-key="label.symbol">Symbole*</label>
+            <input type="text" id="tokenSymbol" placeholder="" maxlength="5">
+            <small class="placeholder-text" data-lang-key="placeholder.symbol">Ex: COPX, GRLI (3-5 lettres)</small>
+        </div>
+        <div class="form-group">
+            <label for="tokenSupply" data-lang-key="label.supply">Supply Total*</label>
+            <input type="number" id="tokenSupply" placeholder="" min="1000">
+            <small><span class="placeholder-text" data-lang-key="placeholder.supply">Ex: 1000000</span> - <span data-lang-key="supplyHint">Nombre total de tokens qui existeront.</span></small>
+        </div>
+        <div class="form-group">
+            <label for="tokenCategory" data-lang-key="label.category">Catégorie de Ressource</label>
+            <select id="tokenCategory">
+                <option value="metal" data-lang-key="option.metal">Métal Industriel (Cuivre, Nickel...)</option>
+                <option value="precious" data-lang-key="option.precious">Métal Précieux (Or, Argent...)</option>
+                <option value="energy" data-lang-key="option.energy">Énergie (Uranium, Lithium...)</option>
+                <option value="tech" data-lang-key="option.tech">Technologie (Silicium, Cobalt...)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <p><strong data-lang-key="fee.text">Frais de création :</strong> <span id="feeAmount">0.05</span> BNB</p>
+            <small data-lang-key="fee.hint">Ces frais couvrent le déploiement sur la blockchain.</small>
+        </div>
+
+        <button class="btn-create" id="createTokenBtn" disabled data-lang-key="button.connect">🔗 Connectez votre portefeuille</button>
+
+        <div id="statusBox" class="status-box"></div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script>
+        // DICTIONNAIRE DES TRADUCTIONS
+        const translations = {
+            fr: {
+                "nav.home": "Accueil MineralX",
+                "nav.factory": "Factory",
+                "nav.znd": "ZND",
+                "title": "🚀 MineralX Factory",
+                "subtitle": "Créez votre propre token numérique lié à une ressource en moins de 2 minutes.",
+                "label.name": "Nom du Token*",
+                "placeholder.name": "Ex: CopperX, GreenLithium",
+                "label.symbol": "Symbole*",
+                "placeholder.symbol": "Ex: COPX, GRLI (3-5 lettres)",
+                "label.supply": "Supply Total*",
+                "placeholder.supply": "Ex: 1000000",
+                "supplyHint": "Nombre total de tokens qui existeront.",
+                "label.category": "Catégorie de Ressource",
+                "option.metal": "Métal Industriel (Cuivre, Nickel...)",
+                "option.precious": "Métal Précieux (Or, Argent...)",
+                "option.energy": "Énergie (Uranium, Lithium...)",
+                "option.tech": "Technologie (Silicium, Cobalt...)",
+                "fee.text": "Frais de création :",
+                "fee.hint": "Ces frais couvrent le déploiement sur la blockchain.",
+                "button.connect": "🔗 Connectez votre portefeuille",
+                "button.create": "🏭 Créer Maintenant (0.05 BNB)",
+                "status.connect": "🔗 Connectez votre portefeuille",
+                "status.metamask": "MetaMask requis"
+            },
+            en: {
+                "nav.home": "MineralX Home",
+                "nav.factory": "Factory",
+                "nav.znd": "ZND",
+                "title": "🚀 MineralX Factory",
+                "subtitle": "Create your own resource-backed digital token in less than 2 minutes.",
+                "label.name": "Token Name*",
+                "placeholder.name": "Ex: CopperX, GreenLithium",
+                "label.symbol": "Symbol*",
+                "placeholder.symbol": "Ex: COPX, GRLI (3-5 letters)",
+                "label.supply": "Total Supply*",
+                "placeholder.supply": "Ex: 1000000",
+                "supplyHint": "Total number of tokens that will exist.",
+                "label.category": "Resource Category",
+                "option.metal": "Industrial Metal (Copper, Nickel...)",
+                "option.precious": "Precious Metal (Gold, Silver...)",
+                "option.energy": "Energy (Uranium, Lithium...)",
+                "option.tech": "Technology (Silicon, Cobalt...)",
+                "fee.text": "Creation fee:",
+                "fee.hint": "This fee covers deployment on the blockchain.",
+                "button.connect": "🔗 Connect your wallet",
+                "button.create": "🏭 Create Now (0.05 BNB)",
+                "status.connect": "🔗 Connect your wallet",
+                "status.metamask": "MetaMask required"
+            },
+            ru: {
+                "nav.home": "MineralX Главная",
+                "nav.factory": "Фабрика",
+                "nav.znd": "ZND",
+                "title": "🚀 MineralX Factory",
+                "subtitle": "Создайте свой собственный цифровой токен, обеспеченный ресурсами, менее чем за 2 минуты.",
+                "label.name": "Название токена*",
+                "placeholder.name": "Напр: CopperX, GreenLithium",
+                "label.symbol": "Символ*",
+                "placeholder.symbol": "Напр: COPX, GRLI (3-5 букв)",
+                "label.supply": "Общее предложение*",
+                "placeholder.supply": "Напр: 1000000",
+                "supplyHint": "Общее количество существующих токенов.",
+                "label.category": "Категория ресурса",
+                "option.metal": "Промышленный металл (Медь, Никель...)",
+                "option.precious": "Драгоценный металл (Золото, Серебро...)",
+                "option.energy": "Энергия (Уран, Литий...)",
+                "option.tech": "Технологии (Кремний, Кобальт...)",
+                "fee.text": "Стоимость создания:",
+                "fee.hint": "Этот сбор покрывает развертывание в блокчейне.",
+                "button.connect": "🔗 Подключите ваш кошелек",
+                "button.create": "🏭 Создать сейчас (0.05 BNB)",
+                "status.connect": "🔗 Подключите ваш кошелек",
+                "status.metamask": "Требуется MetaMask"
+            }
+        };
+
+        // FONCTION POUR CHANGER LA LANGUE
+        function setLanguage(lang) {
+            // 1. Met à jour les boutons actifs
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            // 2. Parcourt tous les éléments avec l'attribut data-lang-key et les remplace
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'SELECT') {
+                        // Pour les inputs et select, on met à jour le placeholder
+                        element.setAttribute('placeholder', translations[lang][key]);
+                    } else if (element.classList.contains('placeholder-text')) {
+                        // Pour les petits textes d'exemple
+                        element.textContent = translations[lang][key];
+                    } else {
+                        // Pour tous les autres éléments (labels, titres, boutons, etc.)
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // 3. Met à jour le texte du bouton principal si nécessaire (géré par factory.js)
+            updateConnectButtonText(lang);
+        }
+
+        // Fonction pour mettre à jour le texte du bouton de connexion (sera appelée par factory.js)
+        window.updateConnectButtonText = function(lang) {
+            const connectBtn = document.getElementById('createTokenBtn');
+            if (connectBtn && connectBtn.disabled) {
+                const textKey = connectBtn.innerHTML.includes('MetaMask') ? 'status.metamask' : 'status.connect';
+                if (translations[lang] && translations[lang][textKey]) {
+                    connectBtn.innerHTML = translations[lang][textKey];
+                }
+            }
+        };
+
+        // INITIALISATION : Ajoute les événements aux boutons de langue
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.lang-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    setLanguage(lang);
+                    // Stocke la préférence de langue
+                    localStorage.setItem('preferredLanguage', lang);
+                });
+            });
+
+            // Récupère la langue préférée sauvegardée ou utilise le français par défaut
+            const savedLang = localStorage.getItem('preferredLanguage') || 'fr';
+            setLanguage(savedLang);
+        });
+    </script>
+    <script src="js/factory.js"></script>
+</body>
+</html>
