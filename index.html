@@ -549,6 +549,148 @@
             margin: 0;
         }
 
+        /* Factory Section */
+        .factory-section {
+            padding: 100px 0;
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .factory-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid #475569;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .factory-container h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary-blue), var(--primary-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .factory-container .subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #475569;
+            border-radius: 10px;
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--primary-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-group small {
+            display: block;
+            margin-top: 8px;
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        .btn-create {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(45deg, var(--primary-blue), #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-create:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-create:disabled {
+            background: #475569;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .status-box {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .status-success {
+            background: rgba(21, 128, 61, 0.2);
+            color: #86efac;
+            border: 1px solid #166534;
+        }
+
+        .status-error {
+            background: rgba(127, 29, 29, 0.2);
+            color: #fca5a5;
+            border: 1px solid #7f1d1d;
+        }
+
+        .status-info {
+            background: rgba(30, 64, 175, 0.2);
+            color: #93c5fd;
+            border: 1px solid #1e40af;
+        }
+
+        .token-link {
+            color: var(--primary-blue);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .token-link:hover {
+            text-decoration: underline;
+        }
+
+        .form-group p {
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        #feeAmount {
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
         /* Footer */
         footer {
             background: var(--dark-bg);
@@ -649,6 +791,15 @@
             .language-selector {
                 top: 10px;
                 right: 10px;
+            }
+
+            .factory-container {
+                padding: 25px 20px;
+                margin: 0 15px;
+            }
+
+            .factory-container h1 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -883,6 +1034,49 @@
         </div>
     </section>
 
+    <!-- Factory Section -->
+    <section id="factory" class="factory-section">
+        <div class="container">
+            <div class="factory-container">
+                <h1 data-lang-key="title">🚀 MineralX Factory</h1>
+                <p class="subtitle" data-lang-key="subtitle">Créez votre propre token numérique lié à une ressource en moins de 2 minutes.</p>
+
+                <div class="form-group">
+                    <label for="tokenName" data-lang-key="label.name">Nom du Token*</label>
+                    <input type="text" id="tokenName" placeholder="" maxlength="30">
+                    <small class="placeholder-text" data-lang-key="placeholder.name">Ex: CopperX, GreenLithium</small>
+                </div>
+                <div class="form-group">
+                    <label for="tokenSymbol" data-lang-key="label.symbol">Symbole*</label>
+                    <input type="text" id="tokenSymbol" placeholder="" maxlength="5">
+                    <small class="placeholder-text" data-lang-key="placeholder.symbol">Ex: COPX, GRLI (3-5 lettres)</small>
+                </div>
+                <div class="form-group">
+                    <label for="tokenSupply" data-lang-key="label.supply">Supply Total*</label>
+                    <input type="number" id="tokenSupply" placeholder="" min="1000">
+                    <small><span class="placeholder-text" data-lang-key="placeholder.supply">Ex: 1000000</span> - <span data-lang-key="supplyHint">Nombre total de tokens qui existeront.</span></small>
+                </div>
+                <div class="form-group">
+                    <label for="tokenCategory" data-lang-key="label.category">Catégorie de Ressource</label>
+                    <select id="tokenCategory">
+                        <option value="metal" data-lang-key="option.metal">Métal Industriel (Cuivre, Nickel...)</option>
+                        <option value="precious" data-lang-key="option.precious">Métal Précieux (Or, Argent...)</option>
+                        <option value="energy" data-lang-key="option.energy">Énergie (Uranium, Lithium...)</option>
+                        <option value="tech" data-lang-key="option.tech">Technologie (Silicium, Cobalt...)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <p><strong data-lang-key="fee.text">Frais de création :</strong> <span id="feeAmount">0.05</span> BNB</p>
+                    <small data-lang-key="fee.hint">Ces frais couvrent le déploiement sur la blockchain.</small>
+                </div>
+
+                <button class="btn-create" id="createTokenBtn" disabled data-lang-key="button.connect">🔗 Connectez votre portefeuille</button>
+
+                <div id="statusBox" class="status-box"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Whitelist Section -->
     <section id="whitelist" class="whitelist-section">
         <div class="container">
@@ -928,7 +1122,7 @@
         </div>
     </footer>
 
- <script>
+<script>
     // Translations complètes et CORRIGÉES
     const translations = {
         fr: {
@@ -1013,7 +1207,29 @@
             bluecore_desc: "Stablecoin adossé au cobalt, métal stratégique pour la transition énergétique. Transparence totale des réserves.",
             ncore_desc: "Stablecoin adossé au nickel pour applications industrielles. Métal stratégique pour acier inoxydable et batteries.",
             urx_desc: "Stablecoin énergie uranium pour le secteur nucléaire. Adossé aux réserves stratégiques d'énergie.",
-            techcore_desc: "Stablecoin silicium et technologie pour l'industrie des semi-conducteurs. Actif digital pour l'infrastructure tech."
+            techcore_desc: "Stablecoin silicium et technologie pour l'industrie des semi-conducteurs. Actif digital pour l'infrastructure tech.",
+            
+            // Factory Translations (ajoutées)
+            "title": "🚀 MineralX Factory",
+            "subtitle": "Créez votre propre token numérique lié à une ressource en moins de 2 minutes.",
+            "label.name": "Nom du Token*",
+            "placeholder.name": "Ex: CopperX, GreenLithium",
+            "label.symbol": "Symbole*",
+            "placeholder.symbol": "Ex: COPX, GRLI (3-5 lettres)",
+            "label.supply": "Supply Total*",
+            "placeholder.supply": "Ex: 1000000",
+            "supplyHint": "Nombre total de tokens qui existeront.",
+            "label.category": "Catégorie de Ressource",
+            "option.metal": "Métal Industriel (Cuivre, Nickel...)",
+            "option.precious": "Métal Précieux (Or, Argent...)",
+            "option.energy": "Énergie (Uranium, Lithium...)",
+            "option.tech": "Technologie (Silicium, Cobalt...)",
+            "fee.text": "Frais de création :",
+            "fee.hint": "Ces frais couvrent le déploiement sur la blockchain.",
+            "button.connect": "🔗 Connectez votre portefeuille",
+            "button.create": "🏭 Créer Maintenant (0.05 BNB)",
+            "status.connect": "🔗 Connectez votre portefeuille",
+            "status.metamask": "MetaMask requis"
         },
         en: {
             // Navigation
@@ -1097,7 +1313,29 @@
             bluecore_desc: "Cobalt-backed stablecoin, strategic metal for energy transition. Complete transparency of reserves.",
             ncore_desc: "Nickel-backed stablecoin for industrial applications. Strategic metal for stainless steel and batteries.",
             urx_desc: "Uranium-energy stablecoin for nuclear power sector. Backed by strategic energy reserves.",
-            techcore_desc: "Silicon and technology stablecoin for semiconductor industry. Digital asset for tech infrastructure."
+            techcore_desc: "Silicon and technology stablecoin for semiconductor industry. Digital asset for tech infrastructure.",
+            
+            // Factory Translations (ajoutées)
+            "title": "🚀 MineralX Factory",
+            "subtitle": "Create your own resource-backed digital token in less than 2 minutes.",
+            "label.name": "Token Name*",
+            "placeholder.name": "Ex: CopperX, GreenLithium",
+            "label.symbol": "Symbol*",
+            "placeholder.symbol": "Ex: COPX, GRLI (3-5 letters)",
+            "label.supply": "Total Supply*",
+            "placeholder.supply": "Ex: 1000000",
+            "supplyHint": "Total number of tokens that will exist.",
+            "label.category": "Resource Category",
+            "option.metal": "Industrial Metal (Copper, Nickel...)",
+            "option.precious": "Precious Metal (Gold, Silver...)",
+            "option.energy": "Energy (Uranium, Lithium...)",
+            "option.tech": "Technology (Silicon, Cobalt...)",
+            "fee.text": "Creation fee:",
+            "fee.hint": "This fee covers deployment on the blockchain.",
+            "button.connect": "🔗 Connect your wallet",
+            "button.create": "🏭 Create Now (0.05 BNB)",
+            "status.connect": "🔗 Connect your wallet",
+            "status.metamask": "MetaMask required"
         },
         ru: {
             // Navigation
@@ -1181,7 +1419,29 @@
             bluecore_desc: "Стейблкоин, обеспеченный кобальтом, стратегическим металлом для энергетического перехода. Полная прозрачность резервов.",
             ncore_desc: "Стейблкоин, обеспеченный никелем, для промышленного применения. Стратегический металл для нержавеющей стали и аккумуляторов.",
             urx_desc: "Урановый стейблкоин для ядерной энергетики. Обеспечен стратегическими энергетическими резервами.",
-            techcore_desc: "Кремниевый и технологический стейблкоин для полупроводниковой промышленности. Цифровой актив для технологической инфраструктуры."
+            techcore_desc: "Кремниевый и технологический стейблкоин для полупроводниковой промышленности. Цифровой актив для технологической инфраструктуры.",
+            
+            // Factory Translations (ajoutées)
+            "title": "🚀 MineralX Factory",
+            "subtitle": "Создайте свой собственный цифровой токен, обеспеченный ресурсами, менее чем за 2 минуты.",
+            "label.name": "Название токена*",
+            "placeholder.name": "Напр: CopperX, GreenLithium",
+            "label.symbol": "Символ*",
+            "placeholder.symbol": "Напр: COPX, GRLI (3-5 букв)",
+            "label.supply": "Общее предложение*",
+            "placeholder.supply": "Напр: 1000000",
+            "supplyHint": "Общее количество существующих токенов.",
+            "label.category": "Категория ресурса",
+            "option.metal": "Промышленный металл (Медь, Никель...)",
+            "option.precious": "Драгоценный металл (Золото, Серебро...)",
+            "option.energy": "Энергия (Уран, Литий...)",
+            "option.tech": "Технологии (Кремний, Кобальт...)",
+            "fee.text": "Стоимость создания:",
+            "fee.hint": "Этот сбор покрывает развертывание в блокчейне.",
+            "button.connect": "🔗 Подключите ваш кошелек",
+            "button.create": "🏭 Создать сейчас (0.05 BNB)",
+            "status.connect": "🔗 Подключите ваш кошелек",
+            "status.metamask": "Требуется MetaMask"
         }
     };
 
@@ -1211,6 +1471,25 @@
                     } else {
                         // Pour le contenu normal (innerHTML pour conserver les balises strong)
                         element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update Factory section elements with data-lang-key
+            const factoryElements = document.querySelectorAll('[data-lang-key]');
+            factoryElements.forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'SELECT') {
+                        // Pour les inputs et select, on met à jour le placeholder
+                        element.setAttribute('placeholder', translations[lang][key]);
+                    } else if (element.classList.contains('placeholder-text')) {
+                        // Pour les petits textes d'exemple
+                        element.textContent = translations[lang][key];
+                    } else {
+                        // Pour tous les autres éléments (labels, titres, boutons, etc.)
+                        element.textContent = translations[lang][key];
                     }
                 }
             });
@@ -1286,7 +1565,59 @@
         });
     }
 
+    // Factory form validation
+    document.addEventListener('DOMContentLoaded', function() {
+        const tokenNameInput = document.getElementById('tokenName');
+        const tokenSymbolInput = document.getElementById('tokenSymbol');
+        const tokenSupplyInput = document.getElementById('tokenSupply');
+        const createTokenBtn = document.getElementById('createTokenBtn');
+
+        function validateForm() {
+            const nameValid = tokenNameInput.value.trim().length >= 2;
+            const symbolValid = tokenSymbolInput.value.trim().length >= 2;
+            const supplyValid = tokenSupplyInput.value >= 1000;
+            
+            return nameValid && symbolValid && supplyValid;
+        }
+
+        function updateButtonState() {
+            if (validateForm()) {
+                createTokenBtn.disabled = false;
+                createTokenBtn.innerHTML = '🏭 Créer Maintenant (0.05 BNB)';
+            } else {
+                createTokenBtn.disabled = true;
+            }
+        }
+
+        tokenNameInput.addEventListener('input', updateButtonState);
+        tokenSymbolInput.addEventListener('input', updateButtonState);
+        tokenSupplyInput.addEventListener('input', updateButtonState);
+
+        // Simulate Web3 connection (à remplacer par la vraie connexion MetaMask)
+        createTokenBtn.addEventListener('click', function() {
+            if (!this.disabled) {
+                const statusBox = document.getElementById('statusBox');
+                statusBox.className = 'status-box status-info';
+                statusBox.style.display = 'block';
+                statusBox.innerHTML = '🔄 Déploiement en cours... Cette opération peut prendre quelques secondes.';
+                
+                // Simuler le déploiement
+                setTimeout(() => {
+                    statusBox.className = 'status-box status-success';
+                    statusBox.innerHTML = '✅ Token créé avec succès !<br>Adresse du contrat: <span class="token-link">0x1234...5678</span><br><small>Votre token sera visible dans votre portefeuille dans quelques minutes.</small>';
+                }, 2000);
+            }
+        });
+
+        // Initialize button state
+        updateButtonState();
+    });
+
     console.log('Translation system loaded successfully!');
 </script>
+
+<!-- Ajout du script Web3 -->
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
 </body>
 </html>
