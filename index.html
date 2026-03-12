@@ -991,6 +991,141 @@
                 font-size: 2rem;
             }
         }
+
+        /* Styles pour la nouvelle section ZND Bridge */
+        .znd-bridge-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .bridge-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .bridge-header .section-title {
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .bridge-header .section-subtitle {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        .bridge-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 768px) {
+            .bridge-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .bridge-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .bridge-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.2);
+            border-color: white;
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .bridge-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .bridge-card p, .bridge-card ul {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.9;
+            text-align: left;
+        }
+
+        .bridge-card ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .bridge-card li {
+            margin-bottom: 8px;
+        }
+
+        .bridge-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .bridge-cta .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .bridge-cta .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            background: #f8f9fa;
+        }
+
+        .cta-note {
+            margin-top: 15px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
@@ -1220,6 +1355,238 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- SECTION ZND BRIDGE - TRILINGUE (AJOUTÉE ICI) -->
+    <section id="znd-bridge" class="znd-bridge-section">
+        <div class="container">
+            <!-- Sélecteur de langue (interne à la section) -->
+            <div class="language-selector" style="position: relative; top: 0; right: 0; margin-bottom: 30px; background: transparent; justify-content: center; display: flex;">
+                <button class="lang-btn active" data-lang="fr" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 20px;">🇫🇷 Français</button>
+                <button class="lang-btn" data-lang="en" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 20px;">🇬🇧 English</button>
+                <button class="lang-btn" data-lang="ru" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 20px;">🇷🇺 Русский</button>
+            </div>
+
+            <!-- Contenu FRANÇAIS (actif par défaut) -->
+            <div id="content-fr" class="lang-content active">
+                <div class="bridge-header">
+                    <span class="badge">🚀 NOUVEAU</span>
+                    <h2 class="section-title">🌍 ZND BRIDGE</h2>
+                    <p class="section-subtitle">Le pont commercial Russie-Afrique</p>
+                </div>
+
+                <div class="bridge-grid">
+                    <div class="bridge-card vision">
+                        <div class="card-icon">🔗</div>
+                        <h3>NOTRE VISION</h3>
+                        <p>Créer le premier couloir de paiement en crypto entre la Russie et l'Afrique.</p>
+                    </div>
+
+                    <div class="bridge-card problem">
+                        <div class="card-icon">⚠️</div>
+                        <h3>LE PROBLÈME</h3>
+                        <ul>
+                            <li>Les Russes ne peuvent plus payer sur les marketplaces internationales</li>
+                            <li>Les Africains perdent 20-30% par an avec leurs monnaies locales</li>
+                            <li>Les commerçants attendent 5 à 10 jours pour les transferts</li>
+                        </ul>
+                    </div>
+
+                    <div class="bridge-card solution">
+                        <div class="card-icon">✅</div>
+                        <h3>LA SOLUTION ZND</h3>
+                        <ul>
+                            <li><strong>Pour les Russes :</strong> Achetez sur Wildberries, 1688 et Amazon avec ZND</li>
+                            <li><strong>Pour les Africains :</strong> Épargnez en ZND (stable, adossée à des mineraux)</li>
+                            <li><strong>Pour les commerçants :</strong> Transactions en 2 minutes au lieu de 5 jours</li>
+                        </ul>
+                    </div>
+
+                    <div class="bridge-card launch">
+                        <div class="card-icon">📅</div>
+                        <h3>LANCEMENT 2026</h3>
+                        <p>Notre plateforme <strong>Zunda-Bridge.com</strong> arrive bientôt !</p>
+                        <div class="countdown" id="countdown-fr" style="margin-top: 15px; gap: 8px;">
+                            <div class="countdown-item" style="padding: 5px; min-width: 40px;">
+                                <span class="countdown-number" id="days-fr" style="font-size: 18px;">00</span>
+                                <span class="countdown-label" style="font-size: 10px;">Jours</span>
+                            </div>
+                            <div class="countdown-item" style="padding: 5px; min-width: 40px;">
+                                <span class="countdown-number" id="hours-fr" style="font-size: 18px;">00</span>
+                                <span class="countdown-label" style="font-size: 10px;">Heures</span>
+                            </div>
+                            <div class="countdown-item" style="padding: 5px; min-width: 40px;">
+                                <span class="countdown-number" id="minutes-fr" style="font-size: 18px;">00</span>
+                                <span class="countdown-label" style="font-size: 10px;">Minutes</span>
+                            </div>
+                            <div class="countdown-item" style="padding: 5px; min-width: 40px;">
+                                <span class="countdown-number" id="seconds-fr" style="font-size: 18px;">00</span>
+                                <span class="countdown-label" style="font-size: 10px;">Secondes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bridge-cta">
+                    <a href="#preinscription" class="cta-button">🚀 JE VEUX ÊTRE INFORMÉ DU LANCEMENT</a>
+                    <p class="cta-note">Soyez parmi les 100 premiers utilisateurs</p>
+                </div>
+            </div>
+
+            <!-- Contenu ANGLAIS (caché par défaut) -->
+            <div id="content-en" class="lang-content">
+                <div class="bridge-header">
+                    <span class="badge">🚀 NEW</span>
+                    <h2 class="section-title">🌍 ZND BRIDGE</h2>
+                    <p class="section-subtitle">The Russia-Africa Trade Bridge</p>
+                </div>
+
+                <div class="bridge-grid">
+                    <div class="bridge-card vision">
+                        <div class="card-icon">🔗</div>
+                        <h3>OUR VISION</h3>
+                        <p>Create the first crypto payment corridor between Russia and Africa.</p>
+                    </div>
+
+                    <div class="bridge-card problem">
+                        <div class="card-icon">⚠️</div>
+                        <h3>THE PROBLEM</h3>
+                        <ul>
+                            <li>Russians can no longer pay on international marketplaces</li>
+                            <li>Africans lose 20-30% per year with their local currencies</li>
+                            <li>Merchants wait 5-10 days for transfers</li>
+                        </ul>
+                    </div>
+
+                    <div class="bridge-card solution">
+                        <div class="card-icon">✅</div>
+                        <h3>THE ZND SOLUTION</h3>
+                        <ul>
+                            <li><strong>For Russians:</strong> Buy on Wildberries, 1688 and Amazon with ZND</li>
+                            <li><strong>For Africans:</strong> Save in ZND (stable, mineral-backed)</li>
+                            <li><strong>For merchants:</strong> Transactions in 2 minutes instead of 5 days</li>
+                        </ul>
+                    </div>
+
+                    <div class="bridge-card launch">
+                        <div class="card-icon">📅</div>
+                        <h3>LAUNCH 2026</h3>
+                        <p>Our platform <strong>Zunda-Bridge.com</strong> is coming soon!</p>
+                        <div class="countdown" id="countdown-en" style="margin-top: 15px; gap: 8px;">
+                            <div class="countdown-item" style="padding: 5px; min-width: 40px;">
+                                <span class="countdown-number" id="days-en" style="font-size: 18px;">00</span>
+                                <span class="countdown-label" style="font-size: 10px;">Days</span>
+                            </div>
+                            <div class="countdown-item" style="padding: 5px; min-width: 40px;">
+                                <span class="countdown-number" id="hours-en" style="font-size: 18px;">00</span>
+                                <span class="countdown-label" style="font-size: 10px;">Hours</span>
+                            </div>
+                            <div class="countdown-item" style="padding: 5px; min-width: 40px;">
+                                <span class="countdown-number" id="minutes-en" style="font-size: 18px;">00</span>
+                                <span class="countdown-label" style="font-size: 10px;">Minutes</span>
+                            </div>
+                            <div class="countdown-item" style="padding: 5px; min-width: 40px;">
+                                <span class="countdown-number" id="seconds-en" style="font-size: 18px;">00</span>
+                                <span class="countdown-label" style="font-size: 10px;">Seconds</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bridge-cta">
+                    <a href="#preinscription" class="cta-button">🚀 I WANT TO BE NOTIFIED OF THE LAUNCH</a>
+                    <p class="cta-note">Be among the first 100 users</p>
+                </div>
+            </div>
+
+            <!-- Contenu RUSSE (caché par défaut) -->
+            <div id="content-ru" class="lang-content">
+                <div class="bridge-header">
+                    <span class="badge">🚀 НОВИНКА</span>
+                    <h2 class="section-title">🌍 ZND BRIDGE</h2>
+                    <p class="section-subtitle">Торговый мост Россия-Африка</p>
+                </div>
+
+                <div class="bridge-grid">
+                    <div class="bridge-card vision">
+                        <div class="card-icon">🔗</div>
+                        <h3>НАШЕ ВИДЕНИЕ</h3>
+                        <p>Создать первый крипто-платежный коридор между Россией и Африкой.</p>
+                    </div>
+
+                    <div class="bridge-card problem">
+                        <div class="card-icon">⚠️</div>
+                        <h3>ПРОБЛЕМА</h3>
+                        <ul>
+                            <li>Россияне больше не могут платить на международных маркетплейсах</li>
+                            <li>Африканцы теряют 20-30% в год с местными валютами</li>
+                            <li>Предприниматели ждут 5-10 дней для переводов</li>
+                        </ul>
+                    </div>
+
+                    <div class="bridge-card solution">
+                        <div class="card-icon">✅</div>
+                        <h3>РЕШЕНИЕ ZND</h3>
+                        <ul>
+                            <li><strong>Для россиян:</strong> Покупайте на Wildberries, 1688 и Amazon с ZND</li>
+                            <li><strong>Для африканцев:</strong> Сохраняйте в ZND (стабильный, обеспеченный минералами)</li>
+                            <li><strong>Для предпринимателей:</strong> Транзакции за 2 минуты вместо 5 дней</li>
+                        </ul>
+                    </div>
+
+                    <div class="bridge-card launch">
+                        <div class="card-icon">📅</div>
+                        <h3>ЗАПУСК 2026</h3>
+                        <p>Наша платформа <strong>Zunda-Bridge.com</strong> скоро появится!</p>
+                        <div class="countdown" id="countdown-ru" style="margin-top: 15px; gap: 8px;">
+                            <div class="countdown-item" style="padding: 5px; min-width: 40px;">
+                                <span class="countdown-number" id="days-ru" style="font-size: 18px;">00</span>
+                                <span class="countdown-label" style="font-size: 10px;">Дней</span>
+                            </div>
+                            <div class="countdown-item" style="padding: 5px; min-width: 40px;">
+                                <span class="countdown-number" id="hours-ru" style="font-size: 18px;">00</span>
+                                <span class="countdown-label" style="font-size: 10px;">Часов</span>
+                            </div>
+                            <div class="countdown-item" style="padding: 5px; min-width: 40px;">
+                                <span class="countdown-number" id="minutes-ru" style="font-size: 18px;">00</span>
+                                <span class="countdown-label" style="font-size: 10px;">Минут</span>
+                            </div>
+                            <div class="countdown-item" style="padding: 5px; min-width: 40px;">
+                                <span class="countdown-number" id="seconds-ru" style="font-size: 18px;">00</span>
+                                <span class="countdown-label" style="font-size: 10px;">Секунд</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bridge-cta">
+                    <a href="#preinscription" class="cta-button">🚀 ХОЧУ ПОЛУЧИТЬ УВЕДОМЛЕНИЕ О ЗАПУСКЕ</a>
+                    <p class="cta-note">Будьте среди первых 100 пользователей</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PRÉ-INSCRIPTION (optionnelle) -->
+    <section id="preinscription" class="preinscription-section" style="padding: 60px 0; background: #f8f9fa;">
+        <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 36px; margin-bottom: 20px; color: #333;">🚀 Prêt pour l'aventure ?</h2>
+            <p style="font-size: 18px; margin-bottom: 30px; color: #666;">Soyez informé en priorité du lancement de Zunda-Bridge</p>
+            
+            <form action="https://formspree.io/f/ton-email" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="text" name="name" placeholder="Votre nom" required style="padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-size: 16px;">
+                <input type="email" name="email" placeholder="Votre email" required style="padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-size: 16px;">
+                <select name="pays" style="padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-size: 16px;">
+                    <option value="">Vous êtes basé où ?</option>
+                    <option value="russie">Russie</option>
+                    <option value="afrique">Afrique</option>
+                    <option value="autre">Autre</option>
+                </select>
+                <button type="submit" style="padding: 18px; background: #667eea; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; transition: all 0.3s;">M'INSCRIRE</button>
+            </form>
+            
+            <p style="margin-top: 20px; font-size: 14px; color: #999;">100 premiers inscrits : bonus exclusif au lancement !</p>
         </div>
     </section>
 
@@ -1857,7 +2224,7 @@
         observer.observe(card);
     });
 
-    // Countdown timer
+    // Countdown timer for Private Sale
     function updateCountdown() {
         const targetDate = new Date('2024-02-01T00:00:00').getTime();
         const now = new Date().getTime();
@@ -1878,9 +2245,52 @@
         }
     }
 
-    // Update countdown every minute
+    // Compte à rebours pour ZND Bridge (30 jours à partir d'aujourd'hui)
+    function getTargetDate() {
+        const now = new Date();
+        // Ajouter 30 jours pour le lancement
+        const targetDate = new Date(now.getTime() + (30 * 24 * 60 * 60 * 1000));
+        return targetDate;
+    }
+    
+    function updateBridgeCountdown() {
+        const targetDate = getTargetDate();
+        const now = new Date();
+        const diff = targetDate - now;
+        
+        if (diff < 0) {
+            // Si la date est passée, mettre 00 partout
+            const numbers = document.querySelectorAll('.countdown-number');
+            numbers.forEach(el => el.textContent = '00');
+            return;
+        }
+        
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        // Mettre à jour pour chaque langue
+        ['fr', 'en', 'ru'].forEach(lang => {
+            const daysEl = document.getElementById(`days-${lang}`);
+            const hoursEl = document.getElementById(`hours-${lang}`);
+            const minutesEl = document.getElementById(`minutes-${lang}`);
+            const secondsEl = document.getElementById(`seconds-${lang}`);
+            
+            if (daysEl) daysEl.textContent = days.toString().padStart(2, '0');
+            if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
+            if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
+            if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
+        });
+    }
+
+    // Update countdown every minute for private sale
     updateCountdown();
     setInterval(updateCountdown, 60000);
+
+    // Update bridge countdown every second
+    updateBridgeCountdown();
+    setInterval(updateBridgeCountdown, 1000);
 
     // Whitelist form submission
     const whitelistForm = document.querySelector('.whitelist-form');
