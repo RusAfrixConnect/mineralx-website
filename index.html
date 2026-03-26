@@ -33,7 +33,6 @@
             padding: 0 20px;
         }
 
-        /* Language Selector */
         .language-selector {
             position: fixed;
             top: 20px;
@@ -64,7 +63,6 @@
             color: var(--text-light);
         }
 
-        /* Header */
         header {
             background: rgba(30, 41, 59, 0.95);
             backdrop-filter: blur(10px);
@@ -112,7 +110,6 @@
             color: var(--primary-blue);
         }
 
-        /* Hero Section */
         .hero {
             padding: 140px 0 80px;
             text-align: center;
@@ -207,7 +204,6 @@
             color: white;
         }
 
-        /* ZND Features Section */
         .znd-features {
             padding: 100px 0;
             background: rgba(30, 41, 59, 0.3);
@@ -250,7 +246,6 @@
             line-height: 1.6;
         }
 
-        /* Private Sale Banner */
         .private-sale-banner {
             background: linear-gradient(135deg, var(--primary-blue), #8b5cf6);
             padding: 3rem;
@@ -310,7 +305,6 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        /* Tokens Section */
         .tokens-section {
             padding: 100px 0;
             background: rgba(30, 41, 59, 0.5);
@@ -463,7 +457,6 @@
             color: var(--primary-blue);
         }
 
-        /* Whitelist Section */
         .whitelist-section {
             background: var(--card-bg);
             padding: 100px 0;
@@ -549,7 +542,6 @@
             margin: 0;
         }
 
-        /* Factory Section */
         .factory-section {
             padding: 100px 0;
             background: rgba(15, 23, 42, 0.8);
@@ -583,7 +575,6 @@
             line-height: 1.6;
         }
 
-        /* Factory Features */
         .factory-features {
             display: flex;
             justify-content: space-between;
@@ -653,7 +644,6 @@
             font-size: 0.85rem;
         }
 
-        /* Advanced Options */
         .advanced-options {
             background: rgba(255, 255, 255, 0.05);
             padding: 20px;
@@ -684,7 +674,6 @@
             accent-color: var(--primary-blue);
         }
 
-        /* Pricing Card */
         .pricing-card {
             background: linear-gradient(135deg, rgba(30, 64, 175, 0.2), rgba(139, 92, 246, 0.2));
             border: 2px solid var(--primary-blue);
@@ -811,7 +800,6 @@
             font-weight: bold;
         }
 
-        /* Success Stories */
         .success-stories {
             margin-top: 40px;
             padding-top: 30px;
@@ -864,7 +852,6 @@
             margin-top: 5px;
         }
 
-        /* Footer */
         footer {
             background: var(--dark-bg);
             padding: 4rem 0;
@@ -896,7 +883,6 @@
             font-size: 0.95rem;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -992,12 +978,10 @@
             }
         }
 
-        /* Styles pour la nouvelle section ZND Bridge */
         .znd-bridge-section {
             padding: 80px 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            font-family: 'Arial', sans-serif;
         }
 
         .bridge-header {
@@ -1127,7 +1111,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* RWA SECTION - STYLE DE OUF */
         .rwa-section {
             padding: 100px 0;
             background: linear-gradient(135deg, #0b1120 0%, #1a2639 100%);
@@ -1185,7 +1168,6 @@
             color: #10b981;
         }
 
-        /* Sélecteur d'actifs */
         .asset-selector-container {
             max-width: 600px;
             margin: 0 auto 50px;
@@ -1222,7 +1204,6 @@
             padding: 10px;
         }
 
-        /* Grille des catégories */
         .rwa-categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1281,7 +1262,6 @@
             color: #cbd5e1;
         }
 
-        /* Interface de création */
         .creation-interface {
             background: rgba(0,0,0,0.3);
             border: 1px solid #2d3748;
@@ -1371,7 +1351,6 @@
             gap: 15px;
         }
 
-        /* Documents */
         .document-item {
             display: flex;
             gap: 10px;
@@ -1428,7 +1407,6 @@
             color: #94a3b8;
         }
 
-        /* Options checkbox */
         .options-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -1452,7 +1430,6 @@
             accent-color: #60a5fa;
         }
 
-        /* Récapitulatif */
         .creation-summary {
             background: linear-gradient(135deg, #1e293b, #0f172a);
             border: 1px solid #60a5fa;
@@ -1575,7 +1552,6 @@
             margin-top: 10px;
         }
 
-        /* Partenaires */
         .partners-section {
             margin-bottom: 60px;
         }
@@ -1625,7 +1601,6 @@
             margin: 0;
         }
 
-        /* FAQ */
         .rwa-faq {
             margin-top: 60px;
         }
@@ -1670,7 +1645,6 @@
             line-height: 1.5;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .rwa-title {
                 font-size: 2.5rem;
@@ -1697,14 +1671,12 @@
     </style>
 </head>
 <body>
-    <!-- Language Selector -->
     <div class="language-selector">
         <button class="lang-btn active" data-lang="fr">FR</button>
         <button class="lang-btn" data-lang="en">EN</button>
         <button class="lang-btn" data-lang="ru">RU</button>
     </div>
 
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="nav-container">
@@ -1732,13 +1704,11 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h1 data-translate="hero_title">MineralX Ecosystem</h1>
             <p data-translate="hero_subtitle">Revolutionizing mineral investment with <strong>ZND Token</strong> - The utility backbone connecting all stablecoins</p>
             
-            <!-- ZND Stats - MISES À JOUR AVEC LES VRAIES VALEURS -->
             <div class="znd-stats">
                 <div class="stat">
                     <h3 data-translate="stat_price">ZND Price</h3>
@@ -1762,7 +1732,6 @@
         </div>
     </section>
 
-    <!-- ZND Features Section -->
     <section id="znd" class="znd-features">
         <div class="container">
             <h2 class="section-title" data-translate="znd_title">ZND Token - The Heart of MineralX</h2>
@@ -1787,7 +1756,6 @@
                 </div>
             </div>
 
-            <!-- Private Sale Countdown -->
             <div class="private-sale-banner">
                 <h3 data-translate="sale_title">🎯 ZND Private Sale - Limited Opportunity</h3>
                 <div class="countdown">
@@ -1809,12 +1777,10 @@
         </div>
     </section>
 
-    <!-- Tokens Section -->
     <section id="tokens" class="tokens-section">
         <div class="container">
             <h2 class="section-title" data-translate="tokens_title">Our Token Ecosystem</h2>
             <div class="tokens-grid">
-                <!-- Zunda Card - Featured -->
                 <div class="token-card featured-token">
                     <div class="token-badge" data-translate="featured_badge">🔥 Featured</div>
                     <div class="token-logo">
@@ -1845,7 +1811,6 @@
                     </div>
                 </div>
 
-                <!-- Lithix Card -->
                 <div class="token-card">
                     <div class="token-logo">
                         <img src="https://i.ibb.co/C5PBYLgh/Lithix-logo.png" alt="Lithix">
@@ -1861,7 +1826,6 @@
                     </div>
                 </div>
 
-                <!-- BlueCore Card -->
                 <div class="token-card">
                     <div class="token-logo">
                         <img src="https://i.ibb.co/RrVzb74/Blue-Core-logo.png" alt="BlueCore">
@@ -1877,7 +1841,6 @@
                     </div>
                 </div>
 
-                <!-- NCore Card -->
                 <div class="token-card">
                     <div class="token-logo">
                         <img src="https://i.ibb.co/5xJVWqVX/NCore-logo.png" alt="NCore">
@@ -1893,7 +1856,6 @@
                     </div>
                 </div>
 
-                <!-- URX Card -->
                 <div class="token-card">
                     <div class="token-logo">
                         <img src="https://i.ibb.co/Myt20Xzf/URX-logo.png" alt="URX">
@@ -1909,7 +1871,6 @@
                     </div>
                 </div>
 
-                <!-- TechCore Card -->
                 <div class="token-card">
                     <div class="token-logo">
                         <img src="https://i.ibb.co/fYznL1Qh/Tech-Core-logo.png" alt="TechCore">
@@ -1928,7 +1889,6 @@
         </div>
     </section>
 
-    <!-- SECTION ZND BRIDGE - TRILINGUE -->
     <section id="znd-bridge" class="znd-bridge-section">
         <div class="container">
             <div class="language-selector" style="position: relative; top: 0; right: 0; margin-bottom: 30px; background: transparent; justify-content: center; display: flex;">
@@ -2065,7 +2025,6 @@
         </div>
     </section>
 
-    <!-- SECTION PRÉ-INSCRIPTION -->
     <section id="preinscription" class="preinscription-section" style="padding: 60px 0; background: #f8f9fa;">
         <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;">
             <h2 style="font-size: 36px; margin-bottom: 20px; color: #333;">🚀 Prêt pour l'aventure ?</h2>
@@ -2087,7 +2046,6 @@
         </div>
     </section>
 
-    <!-- Factory Section -->
     <section id="factory" class="factory-section">
         <div class="container">
             <div class="factory-container">
@@ -2218,7 +2176,7 @@
                     <span class="market-badge" data-translate="rwa_market_size3" data-lang-key="rwa_market_size3">Projection 2030: <strong>$30 Trillions</strong></span>
                 </div>
             </div>
-            <!-- Le reste de la section RWA reste identique -->
+
             <div class="asset-selector-container">
                 <label for="rwa-asset-type" class="asset-label" data-translate="rwa_asset_label" data-lang-key="rwa_asset_label">🎯 Choisissez votre type d'actif à tokeniser :</label>
                 <select id="rwa-asset-type" class="asset-select">
@@ -2238,11 +2196,365 @@
                     <option value="mineral-education" data-translate="rwa_option_mineral_education" data-lang-key="rwa_option_mineral_education">📚 NFTs éducatifs (géologie, mineraux)</option>
                 </select>
             </div>
-            <!-- Le reste de la section RWA est conservé -->
+
+            <div class="rwa-categories-grid">
+                <div class="rwa-category-card" data-category="mining">
+                    <div class="category-icon">⛏️</div>
+                    <h3 data-translate="rwa_cat_mining_title" data-lang-key="rwa_cat_mining_title">Mines & Concessions</h3>
+                    <p data-translate="rwa_cat_mining_desc" data-lang-key="rwa_cat_mining_desc">Tokenisez vos droits miniers, concessions, permis d'exploration</p>
+                    <div class="category-stats">
+                        <span data-translate="rwa_cat_mining_stat1" data-lang-key="rwa_cat_mining_stat1">💰 Rendement: 8-15%</span>
+                        <span data-translate="rwa_cat_mining_stat2" data-lang-key="rwa_cat_mining_stat2">🔗 Lithium, Cobalt, Nickel, Or</span>
+                    </div>
+                </div>
+
+                <div class="rwa-category-card" data-category="minerals">
+                    <div class="category-icon">💎</div>
+                    <h3 data-translate="rwa_cat_minerals_title" data-lang-key="rwa_cat_minerals_title">Minéraux physiques</h3>
+                    <p data-translate="rwa_cat_minerals_desc" data-lang-key="rwa_cat_minerals_desc">Lithium, cobalt, uranium, terres rares en stock physique</p>
+                    <div class="category-stats">
+                        <span data-translate="rwa_cat_minerals_stat1" data-lang-key="rwa_cat_minerals_stat1">📊 Taille marché: $4.1B</span>
+                        <span data-translate="rwa_cat_minerals_stat2" data-lang-key="rwa_cat_minerals_stat2">🔐 Custodie agréée</span>
+                    </div>
+                </div>
+
+                <div class="rwa-category-card" data-category="realestate">
+                    <div class="category-icon">🏢</div>
+                    <h3 data-translate="rwa_cat_realestate_title" data-lang-key="rwa_cat_realestate_title">Immobilier fractionné</h3>
+                    <p data-translate="rwa_cat_realestate_desc" data-lang-key="rwa_cat_realestate_desc">Immeubles, bureaux, terrains en micro-parts</p>
+                    <div class="category-stats">
+                        <span data-translate="rwa_cat_realestate_stat1" data-lang-key="rwa_cat_realestate_stat1">📈 Fractionnable</span>
+                        <span data-translate="rwa_cat_realestate_stat2" data-lang-key="rwa_cat_realestate_stat2">🏛️ SPV inclus</span>
+                    </div>
+                </div>
+
+                <div class="rwa-category-card" data-category="art">
+                    <div class="category-icon">🎨</div>
+                    <h3 data-translate="rwa_cat_art_title" data-lang-key="rwa_cat_art_title">Art & Collections</h3>
+                    <p data-translate="rwa_cat_art_desc" data-lang-key="rwa_cat_art_desc">Tableaux, sculptures, objets rares tokenisés</p>
+                    <div class="category-stats">
+                        <span data-translate="rwa_cat_art_stat1" data-lang-key="rwa_cat_art_stat1">🖼️ Expertise incluse</span>
+                        <span data-translate="rwa_cat_art_stat2" data-lang-key="rwa_cat_art_stat2">🔍 Authenticité garantie</span>
+                    </div>
+                </div>
+
+                <div class="rwa-category-card" data-category="gems">
+                    <div class="category-icon">🔮</div>
+                    <h3 data-translate="rwa_cat_gems_title" data-lang-key="rwa_cat_gems_title">Gemmes NFT</h3>
+                    <p data-translate="rwa_cat_gems_desc" data-lang-key="rwa_cat_gems_desc">Diamants, émeraudes, saphirs avec certificat</p>
+                    <div class="category-stats">
+                        <span data-translate="rwa_cat_gems_stat1" data-lang-key="rwa_cat_gems_stat1">💎 GIA certifié</span>
+                        <span data-translate="rwa_cat_gems_stat2" data-lang-key="rwa_cat_gems_stat2">📸 3D scan inclus</span>
+                    </div>
+                </div>
+
+                <div class="rwa-category-card" data-category="treasury">
+                    <div class="category-icon">📜</div>
+                    <h3 data-translate="rwa_cat_treasury_title" data-lang-key="rwa_cat_treasury_title">Bons du Trésor</h3>
+                    <p data-translate="rwa_cat_treasury_desc" data-lang-key="rwa_cat_treasury_desc">Obligations d'État, dette souveraine tokenisée</p>
+                    <div class="category-stats">
+                        <span data-translate="rwa_cat_treasury_stat1" data-lang-key="rwa_cat_treasury_stat1">🇺🇸 Rendement 4-6%</span>
+                        <span data-translate="rwa_cat_treasury_stat2" data-lang-key="rwa_cat_treasury_stat2">📊 $9-10B market</span>
+                    </div>
+                </div>
+
+                <div class="rwa-category-card" data-category="credit">
+                    <div class="category-icon">💰</div>
+                    <h3 data-translate="rwa_cat_credit_title" data-lang-key="rwa_cat_credit_title">Crédit privé</h3>
+                    <p data-translate="rwa_cat_credit_desc" data-lang-key="rwa_cat_credit_desc">Factures commerciales, prêts aux entreprises</p>
+                    <div class="category-stats">
+                        <span data-translate="rwa_cat_credit_stat1" data-lang-key="rwa_cat_credit_stat1">📈 Rendement 8-12%</span>
+                        <span data-translate="rwa_cat_credit_stat2" data-lang-key="rwa_cat_credit_stat2">🏦 $2-6B market</span>
+                    </div>
+                </div>
+
+                <div class="rwa-category-card" data-category="commodity">
+                    <div class="category-icon">🌾</div>
+                    <h3 data-translate="rwa_cat_commodity_title" data-lang-key="rwa_cat_commodity_title">Matières premières</h3>
+                    <p data-translate="rwa_cat_commodity_desc" data-lang-key="rwa_cat_commodity_desc">Café, cacao, blé, coton en stock</p>
+                    <div class="category-stats">
+                        <span data-translate="rwa_cat_commodity_stat1" data-lang-key="rwa_cat_commodity_stat1">☕ Traçable</span>
+                        <span data-translate="rwa_cat_commodity_stat2" data-lang-key="rwa_cat_commodity_stat2">🌍 Origine garantie</span>
+                    </div>
+                </div>
+
+                <div class="rwa-category-card" data-category="energy">
+                    <div class="category-icon">⚡</div>
+                    <h3 data-translate="rwa_cat_energy_title" data-lang-key="rwa_cat_energy_title">Énergie & Carbone</h3>
+                    <p data-translate="rwa_cat_energy_desc" data-lang-key="rwa_cat_energy_desc">Crédits carbone, droits d'exploitation pétrolière</p>
+                    <div class="category-stats">
+                        <span data-translate="rwa_cat_energy_stat1" data-lang-key="rwa_cat_energy_stat1">🌱 ESG compliant</span>
+                        <span data-translate="rwa_cat_energy_stat2" data-lang-key="rwa_cat_energy_stat2">📉 Marché $2B</span>
+                    </div>
+                </div>
+
+                <div class="rwa-category-card" data-category="ip">
+                    <div class="category-icon">📚</div>
+                    <h3 data-translate="rwa_cat_ip_title" data-lang-key="rwa_cat_ip_title">Propriété intellectuelle</h3>
+                    <p data-translate="rwa_cat_ip_desc" data-lang-key="rwa_cat_ip_desc">Brevets, droits d'auteur, marques</p>
+                    <div class="category-stats">
+                        <span data-translate="rwa_cat_ip_stat1" data-lang-key="rwa_cat_ip_stat1">⚖️ Cadre légal</span>
+                        <span data-translate="rwa_cat_ip_stat2" data-lang-key="rwa_cat_ip_stat2">💸 Royalties automatiques</span>
+                    </div>
+                </div>
+
+                <div class="rwa-category-card" data-category="luxury">
+                    <div class="category-icon">⌚</div>
+                    <h3 data-translate="rwa_cat_luxury_title" data-lang-key="rwa_cat_luxury_title">Biens de luxe</h3>
+                    <p data-translate="rwa_cat_luxury_desc" data-lang-key="rwa_cat_luxury_desc">Montres, sacs Hermès, voitures de collection</p>
+                    <div class="category-stats">
+                        <span data-translate="rwa_cat_luxury_stat1" data-lang-key="rwa_cat_luxury_stat1">✅ Authentification</span>
+                        <span data-translate="rwa_cat_luxury_stat2" data-lang-key="rwa_cat_luxury_stat2">📈 Marché secondaire</span>
+                    </div>
+                </div>
+
+                <div class="rwa-category-card" data-category="fossil">
+                    <div class="category-icon">🦖</div>
+                    <h3 data-translate="rwa_cat_fossil_title" data-lang-key="rwa_cat_fossil_title">Fossiles & Minéraux rares</h3>
+                    <p data-translate="rwa_cat_fossil_desc" data-lang-key="rwa_cat_fossil_desc">Spécimens uniques pour collectionneurs</p>
+                    <div class="category-stats">
+                        <span data-translate="rwa_cat_fossil_stat1" data-lang-key="rwa_cat_fossil_stat1">🔬 Certifiés</span>
+                        <span data-translate="rwa_cat_fossil_stat2" data-lang-key="rwa_cat_fossil_stat2">🏛️ Musées partenaires</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="creation-interface">
+                <h3 class="interface-title" data-translate="rwa_interface_title" data-lang-key="rwa_interface_title">🛠️ Assistant de création RWA/NFT</h3>
+                
+                <div class="creation-grid">
+                    <div class="creation-form">
+                        <div class="form-section">
+                            <h4 data-translate="rwa_section1_title" data-lang-key="rwa_section1_title">1. Décrivez votre actif</h4>
+                            
+                            <div class="form-group">
+                                <label for="asset-name" data-translate="rwa_label_name" data-lang-key="rwa_label_name">Nom de l'actif *</label>
+                                <input type="text" id="asset-name" placeholder="Ex: Concession Lithium Mali #234, Diamant Rose 5ct">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="asset-description" data-translate="rwa_label_description" data-lang-key="rwa_label_description">Description détaillée</label>
+                                <textarea id="asset-description" rows="3" placeholder="Décrivez votre actif, son histoire, sa valeur..."></textarea>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group half">
+                                    <label for="asset-location" data-translate="rwa_label_location" data-lang-key="rwa_label_location">Localisation</label>
+                                    <input type="text" id="asset-location" placeholder="Pays, région">
+                                </div>
+                                <div class="form-group half">
+                                    <label for="asset-year" data-translate="rwa_label_year" data-lang-key="rwa_label_year">Année d'acquisition</label>
+                                    <input type="number" id="asset-year" placeholder="2024">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="asset-value" data-translate="rwa_label_value" data-lang-key="rwa_label_value">Valeur estimée (USD) *</label>
+                                <input type="number" id="asset-value" placeholder="100000">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="asset-supply" data-translate="rwa_label_supply" data-lang-key="rwa_label_supply">Nombre de tokens à créer *</label>
+                                <input type="number" id="asset-supply" value="1000" min="1">
+                                <small data-translate="rwa_supply_hint" data-lang-key="rwa_supply_hint">Chaque token représentera 1/[supply] de l'actif</small>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4 data-translate="rwa_section2_title" data-lang-key="rwa_section2_title">2. Documents légaux & Preuves</h4>
+                            
+                            <div class="document-upload" id="documents-container">
+                                <div class="document-item">
+                                    <select class="doc-type">
+                                        <option value="title" data-translate="rwa_doc_title" data-lang-key="rwa_doc_title">Titre de propriété</option>
+                                        <option value="certificate" data-translate="rwa_doc_certificate" data-lang-key="rwa_doc_certificate">Certificat d'authenticité</option>
+                                        <option value="valuation" data-translate="rwa_doc_valuation" data-lang-key="rwa_doc_valuation">Rapport d'évaluation</option>
+                                        <option value="geological" data-translate="rwa_doc_geological" data-lang-key="rwa_doc_geological">Rapport géologique</option>
+                                        <option value="legal" data-translate="rwa_doc_legal" data-lang-key="rwa_doc_legal">Avis juridique</option>
+                                        <option value="custody" data-translate="rwa_doc_custody" data-lang-key="rwa_doc_custody">Preuve de dépôt/custodie</option>
+                                        <option value="insurance" data-translate="rwa_doc_insurance" data-lang-key="rwa_doc_insurance">Certificat d'assurance</option>
+                                        <option value="other" data-translate="rwa_doc_other" data-lang-key="rwa_doc_other">Autre document</option>
+                                    </select>
+                                    <input type="file" class="doc-file" accept=".pdf,.jpg,.png">
+                                    <button class="remove-doc">❌</button>
+                                </div>
+                            </div>
+                            <button id="add-document" class="add-doc-btn" data-translate="rwa_add_doc" data-lang-key="rwa_add_doc">+ Ajouter un document</button>
+                            <p class="doc-note" data-translate="rwa_doc_note" data-lang-key="rwa_doc_note">📌 PDF, JPG, PNG acceptés. Les documents seront vérifiés par notre équipe.</p>
+                        </div>
+
+                        <div class="form-section">
+                            <h4 data-translate="rwa_section3_title" data-lang-key="rwa_section3_title">3. Options avancées</h4>
+                            
+                            <div class="options-grid">
+                                <label class="option-checkbox">
+                                    <input type="checkbox" id="option-kyc" checked>
+                                    <span data-translate="rwa_option_kyc" data-lang-key="rwa_option_kyc">🔐 KYC obligatoire pour les acheteurs</span>
+                                </label>
+                                <label class="option-checkbox">
+                                    <input type="checkbox" id="option-spv">
+                                    <span data-translate="rwa_option_spv" data-lang-key="rwa_option_spv">🏛️ Créer un SPV (structure légale dédiée)</span>
+                                </label>
+                                <label class="option-checkbox">
+                                    <input type="checkbox" id="option-oracle" checked>
+                                    <span data-translate="rwa_option_oracle" data-lang-key="rwa_option_oracle">📊 Intégrer un oracle de prix (Chainlink)</span>
+                                </label>
+                                <label class="option-checkbox">
+                                    <input type="checkbox" id="option-geolock">
+                                    <span data-translate="rwa_option_geolock" data-lang-key="rwa_option_geolock">🌍 Restreindre par géolocalisation</span>
+                                </label>
+                                <label class="option-checkbox">
+                                    <input type="checkbox" id="option-revenue">
+                                    <span data-translate="rwa_option_revenue" data-lang-key="rwa_option_revenue">💸 Distribution automatique des revenus</span>
+                                </label>
+                                <label class="option-checkbox">
+                                    <input type="checkbox" id="option-voting">
+                                    <span data-translate="rwa_option_voting" data-lang-key="rwa_option_voting">🗳️ Droits de vote pour les holders</span>
+                                </label>
+                                <label class="option-checkbox">
+                                    <input type="checkbox" id="option-burn">
+                                    <span data-translate="rwa_option_burn" data-lang-key="rwa_option_burn">🔥 Fonction de burn (rachat/destruction)</span>
+                                </label>
+                                <label class="option-checkbox">
+                                    <input type="checkbox" id="option-secondary" checked>
+                                    <span data-translate="rwa_option_secondary" data-lang-key="rwa_option_secondary">🔄 Listing automatique sur marketplace secondaire</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="creation-summary">
+                        <h4 data-translate="rwa_summary_title" data-lang-key="rwa_summary_title">📋 Récapitulatif</h4>
+                        
+                        <div id="summary-content" class="summary-content">
+                            <div class="summary-item">
+                                <span data-translate="rwa_summary_type" data-lang-key="rwa_summary_type">Type d'actif:</span>
+                                <strong id="summary-asset-type" data-translate="rwa_summary_type_default" data-lang-key="rwa_summary_type_default">Concession minière</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span data-translate="rwa_summary_name" data-lang-key="rwa_summary_name">Nom:</span>
+                                <strong id="summary-asset-name">—</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span data-translate="rwa_summary_value" data-lang-key="rwa_summary_value">Valeur totale:</span>
+                                <strong id="summary-value">0 USD</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span data-translate="rwa_summary_supply" data-lang-key="rwa_summary_supply">Tokens créés:</span>
+                                <strong id="summary-supply">1,000</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span data-translate="rwa_summary_per_token" data-lang-key="rwa_summary_per_token">Valeur par token:</span>
+                                <strong id="summary-per-token">0 USD</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span data-translate="rwa_summary_docs" data-lang-key="rwa_summary_docs">Documents:</span>
+                                <strong id="summary-docs">0</strong>
+                            </div>
+                        </div>
+
+                        <div class="pricing-details">
+                            <h4 data-translate="rwa_pricing_title" data-lang-key="rwa_pricing_title">💰 Frais de création</h4>
+                            <div class="price-row">
+                                <span data-translate="rwa_pricing_base" data-lang-key="rwa_pricing_base">Frais de base:</span>
+                                <span>0.15 BNB</span>
+                            </div>
+                            <div class="price-row">
+                                <span data-translate="rwa_pricing_spv" data-lang-key="rwa_pricing_spv">SPV (optionnel):</span>
+                                <span>+0.05 BNB</span>
+                            </div>
+                            <div class="price-row">
+                                <span data-translate="rwa_pricing_oracle" data-lang-key="rwa_pricing_oracle">Oracle integration:</span>
+                                <span>+0.02 BNB</span>
+                            </div>
+                            <div class="price-row total">
+                                <span data-translate="rwa_pricing_total" data-lang-key="rwa_pricing_total">Total:</span>
+                                <span id="total-fee">0.15 BNB</span>
+                            </div>
+                            <div class="revenue-share">
+                                <p data-translate="rwa_revenue_share1" data-lang-key="rwa_revenue_share1">🎁 <strong>70% des frais reversés aux holders ZND</strong></p>
+                                <p data-translate="rwa_revenue_share2" data-lang-key="rwa_revenue_share2">20% développement & marketing</p>
+                                <p data-translate="rwa_revenue_share3" data-lang-key="rwa_revenue_share3">10% audits légaux & sécurité</p>
+                            </div>
+                        </div>
+
+                        <div class="legal-notice">
+                            <h4 data-translate="rwa_legal_title" data-lang-key="rwa_legal_title">⚖️ Conformité & Légal</h4>
+                            <p data-translate="rwa_legal_1" data-lang-key="rwa_legal_1">✓ KYC/AML inclus pour tous les investisseurs</p>
+                            <p data-translate="rwa_legal_2" data-lang-key="rwa_legal_2">✓ Structure juridique conforme aux régulations</p>
+                            <p data-translate="rwa_legal_3" data-lang-key="rwa_legal_3">✓ Partenariat avec cabinets d'avocats internationaux</p>
+                            <p data-translate="rwa_legal_4" data-lang-key="rwa_legal_4">✓ Audit de sécurité obligatoire</p>
+                        </div>
+
+                        <button class="create-rwa-btn" id="create-rwa-btn" data-translate="rwa_create_btn" data-lang-key="rwa_create_btn">🚀 CRÉER MON RWA / NFT (0.15 BNB)</button>
+                        <p class="btn-note" data-translate="rwa_btn_note" data-lang-key="rwa_btn_note">Les fonds sont sécurisés et remboursés si l'actif ne passe pas la due diligence</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="partners-section">
+                <h4 data-translate="rwa_partners_title" data-lang-key="rwa_partners_title">Nos partenaires juridiques & techniques</h4>
+                <div class="partners-grid">
+                    <div class="partner">
+                        <span>⚖️</span>
+                        <strong data-translate="rwa_partner1_title" data-lang-key="rwa_partner1_title">Cabinets d'avocats</strong>
+                        <p data-translate="rwa_partner1_desc" data-lang-key="rwa_partner1_desc">Moscou, Dubai, Singapour, Luxembourg</p>
+                    </div>
+                    <div class="partner">
+                        <span>🔐</span>
+                        <strong data-translate="rwa_partner2_title" data-lang-key="rwa_partner2_title">Custodie agréée</strong>
+                        <p data-translate="rwa_partner2_desc" data-lang-key="rwa_partner2_desc">Banques partenaires, coffres certifiés</p>
+                    </div>
+                    <div class="partner">
+                        <span>📊</span>
+                        <strong data-translate="rwa_partner3_title" data-lang-key="rwa_partner3_title">Experts en évaluation</strong>
+                        <p data-translate="rwa_partner3_desc" data-lang-key="rwa_partner3_desc">Géologues, experts en gemmes, commissaires-priseurs</p>
+                    </div>
+                    <div class="partner">
+                        <span>🔗</span>
+                        <strong data-translate="rwa_partner4_title" data-lang-key="rwa_partner4_title">Chainlink oracles</strong>
+                        <p data-translate="rwa_partner4_desc" data-lang-key="rwa_partner4_desc">Prix en temps réel, données vérifiées</p>
+                    </div>
+                    <div class="partner">
+                        <span>🏛️</span>
+                        <strong data-translate="rwa_partner5_title" data-lang-key="rwa_partner5_title">SPV formation</strong>
+                        <p data-translate="rwa_partner5_desc" data-lang-key="rwa_partner5_desc">Cayman, BVI, Delaware, UAE</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rwa-faq">
+                <h4 data-translate="rwa_faq_title" data-lang-key="rwa_faq_title">❓ Questions fréquentes sur les RWA</h4>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <p class="faq-q" data-translate="rwa_faq1_q" data-lang-key="rwa_faq1_q">C'est quoi un RWA ?</p>
+                        <p class="faq-a" data-translate="rwa_faq1_a" data-lang-key="rwa_faq1_a">Un actif du monde réel (immeuble, or, concession) tokenisé sur blockchain.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q" data-translate="rwa_faq2_q" data-lang-key="rwa_faq2_q">Est-ce légal ?</p>
+                        <p class="faq-a" data-translate="rwa_faq2_a" data-lang-key="rwa_faq2_a">Oui, avec la bonne structure (SPV) et KYC. Nous vous accompagnons.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q" data-translate="rwa_faq3_q" data-lang-key="rwa_faq3_q">Combien ça coûte ?</p>
+                        <p class="faq-a" data-translate="rwa_faq3_a" data-lang-key="rwa_faq3_a">0.15 BNB de base + options. 70% redistribué aux holders ZND.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q" data-translate="rwa_faq4_q" data-lang-key="rwa_faq4_q">Quels actifs sont éligibles ?</p>
+                        <p class="faq-a" data-translate="rwa_faq4_a" data-lang-key="rwa_faq4_a">Tout actif légal avec documentation : mineraux, immobilier, art, crédit...</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q" data-translate="rwa_faq5_q" data-lang-key="rwa_faq5_q">Comment les acheteurs sont protégés ?</p>
+                        <p class="faq-a" data-translate="rwa_faq5_a" data-lang-key="rwa_faq5_a">Due diligence, audit, custody, et structure légale dédiée.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q" data-translate="rwa_faq6_q" data-lang-key="rwa_faq6_q">Puis-je revendre mes tokens ?</p>
+                        <p class="faq-a" data-translate="rwa_faq6_a" data-lang-key="rwa_faq6_a">Oui, sur notre marketplace secondaire intégrée.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Whitelist Section -->
     <section id="whitelist" class="whitelist-section">
         <div class="container">
             <h2 data-translate="whitelist_title">Join ZND Private Sale Whitelist</h2>
@@ -2271,7 +2583,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-links">
@@ -2288,7 +2599,6 @@
     </footer>
 
     <script>
-    // Fonction pour ajouter ZND à MetaMask
     async function addZNDToMetaMask() {
         if (window.ethereum) {
             try {
@@ -2300,21 +2610,20 @@
                             address: '0x3BcE58FC2C2BB0653dC757Ba0bc5328d4f2f15A9',
                             symbol: 'ZND',
                             decimals: 18,
-                            image: 'https://mineralx.io/znd-logo.png'
+                            image: 'https://mineralx.io/images/znd-logo.png'
                         }
                     }
                 });
-                alert('ZND ajouté à MetaMask !');
+                alert('ZND added to MetaMask!');
             } catch (error) {
-                console.log("Erreur", error);
-                alert("Erreur lors de l'ajout");
+                console.log("Error", error);
+                alert("Error adding ZND to MetaMask");
             }
         } else {
-            alert("MetaMask n'est pas installé");
+            alert("MetaMask not installed");
         }
     }
 
-    // Translations complètes (conservées)
     const translations = {
         fr: {
             company_name: "MineralX Holding",
@@ -2425,7 +2734,131 @@
             "rwa_option_luxury_goods": "⌚ Biens de luxe (montres, sacs, voitures)",
             "rwa_option_fossil": "🦖 Fossiles & Minéraux rares",
             "rwa_option_mineral_nft_art": "🎨 NFT Artistiques sur thème minéral",
-            "rwa_option_mineral_education": "📚 NFTs éducatifs (géologie, mineraux)"
+            "rwa_option_mineral_education": "📚 NFTs éducatifs (géologie, mineraux)",
+            "rwa_cat_mining_title": "Mines & Concessions",
+            "rwa_cat_mining_desc": "Tokenisez vos droits miniers, concessions, permis d'exploration",
+            "rwa_cat_mining_stat1": "💰 Rendement: 8-15%",
+            "rwa_cat_mining_stat2": "🔗 Lithium, Cobalt, Nickel, Or",
+            "rwa_cat_minerals_title": "Minéraux physiques",
+            "rwa_cat_minerals_desc": "Lithium, cobalt, uranium, terres rares en stock physique",
+            "rwa_cat_minerals_stat1": "📊 Taille marché: $4.1B",
+            "rwa_cat_minerals_stat2": "🔐 Custodie agréée",
+            "rwa_cat_realestate_title": "Immobilier fractionné",
+            "rwa_cat_realestate_desc": "Immeubles, bureaux, terrains en micro-parts",
+            "rwa_cat_realestate_stat1": "📈 Fractionnable",
+            "rwa_cat_realestate_stat2": "🏛️ SPV inclus",
+            "rwa_cat_art_title": "Art & Collections",
+            "rwa_cat_art_desc": "Tableaux, sculptures, objets rares tokenisés",
+            "rwa_cat_art_stat1": "🖼️ Expertise incluse",
+            "rwa_cat_art_stat2": "🔍 Authenticité garantie",
+            "rwa_cat_gems_title": "Gemmes NFT",
+            "rwa_cat_gems_desc": "Diamants, émeraudes, saphirs avec certificat",
+            "rwa_cat_gems_stat1": "💎 GIA certifié",
+            "rwa_cat_gems_stat2": "📸 3D scan inclus",
+            "rwa_cat_treasury_title": "Bons du Trésor",
+            "rwa_cat_treasury_desc": "Obligations d'État, dette souveraine tokenisée",
+            "rwa_cat_treasury_stat1": "🇺🇸 Rendement 4-6%",
+            "rwa_cat_treasury_stat2": "📊 $9-10B market",
+            "rwa_cat_credit_title": "Crédit privé",
+            "rwa_cat_credit_desc": "Factures commerciales, prêts aux entreprises",
+            "rwa_cat_credit_stat1": "📈 Rendement 8-12%",
+            "rwa_cat_credit_stat2": "🏦 $2-6B market",
+            "rwa_cat_commodity_title": "Matières premières",
+            "rwa_cat_commodity_desc": "Café, cacao, blé, coton en stock",
+            "rwa_cat_commodity_stat1": "☕ Traçable",
+            "rwa_cat_commodity_stat2": "🌍 Origine garantie",
+            "rwa_cat_energy_title": "Énergie & Carbone",
+            "rwa_cat_energy_desc": "Crédits carbone, droits d'exploitation pétrolière",
+            "rwa_cat_energy_stat1": "🌱 ESG compliant",
+            "rwa_cat_energy_stat2": "📉 Marché $2B",
+            "rwa_cat_ip_title": "Propriété intellectuelle",
+            "rwa_cat_ip_desc": "Brevets, droits d'auteur, marques",
+            "rwa_cat_ip_stat1": "⚖️ Cadre légal",
+            "rwa_cat_ip_stat2": "💸 Royalties automatiques",
+            "rwa_cat_luxury_title": "Biens de luxe",
+            "rwa_cat_luxury_desc": "Montres, sacs Hermès, voitures de collection",
+            "rwa_cat_luxury_stat1": "✅ Authentification",
+            "rwa_cat_luxury_stat2": "📈 Marché secondaire",
+            "rwa_cat_fossil_title": "Fossiles & Minéraux rares",
+            "rwa_cat_fossil_desc": "Spécimens uniques pour collectionneurs",
+            "rwa_cat_fossil_stat1": "🔬 Certifiés",
+            "rwa_cat_fossil_stat2": "🏛️ Musées partenaires",
+            "rwa_interface_title": "🛠️ Assistant de création RWA/NFT",
+            "rwa_section1_title": "1. Décrivez votre actif",
+            "rwa_label_name": "Nom de l'actif *",
+            "rwa_label_description": "Description détaillée",
+            "rwa_label_location": "Localisation",
+            "rwa_label_year": "Année d'acquisition",
+            "rwa_label_value": "Valeur estimée (USD) *",
+            "rwa_label_supply": "Nombre de tokens à créer *",
+            "rwa_supply_hint": "Chaque token représentera 1/[supply] de l'actif",
+            "rwa_section2_title": "2. Documents légaux & Preuves",
+            "rwa_doc_title": "Titre de propriété",
+            "rwa_doc_certificate": "Certificat d'authenticité",
+            "rwa_doc_valuation": "Rapport d'évaluation",
+            "rwa_doc_geological": "Rapport géologique",
+            "rwa_doc_legal": "Avis juridique",
+            "rwa_doc_custody": "Preuve de dépôt/custodie",
+            "rwa_doc_insurance": "Certificat d'assurance",
+            "rwa_doc_other": "Autre document",
+            "rwa_add_doc": "+ Ajouter un document",
+            "rwa_doc_note": "📌 PDF, JPG, PNG acceptés. Les documents seront vérifiés par notre équipe.",
+            "rwa_section3_title": "3. Options avancées",
+            "rwa_option_kyc": "🔐 KYC obligatoire pour les acheteurs",
+            "rwa_option_spv": "🏛️ Créer un SPV (structure légale dédiée)",
+            "rwa_option_oracle": "📊 Intégrer un oracle de prix (Chainlink)",
+            "rwa_option_geolock": "🌍 Restreindre par géolocalisation",
+            "rwa_option_revenue": "💸 Distribution automatique des revenus",
+            "rwa_option_voting": "🗳️ Droits de vote pour les holders",
+            "rwa_option_burn": "🔥 Fonction de burn (rachat/destruction)",
+            "rwa_option_secondary": "🔄 Listing automatique sur marketplace secondaire",
+            "rwa_summary_title": "📋 Récapitulatif",
+            "rwa_summary_type": "Type d'actif:",
+            "rwa_summary_type_default": "Concession minière",
+            "rwa_summary_name": "Nom:",
+            "rwa_summary_value": "Valeur totale:",
+            "rwa_summary_supply": "Tokens créés:",
+            "rwa_summary_per_token": "Valeur par token:",
+            "rwa_summary_docs": "Documents:",
+            "rwa_pricing_title": "💰 Frais de création",
+            "rwa_pricing_base": "Frais de base:",
+            "rwa_pricing_spv": "SPV (optionnel):",
+            "rwa_pricing_oracle": "Oracle integration:",
+            "rwa_pricing_total": "Total:",
+            "rwa_revenue_share1": "🎁 <strong>70% des frais reversés aux holders ZND</strong>",
+            "rwa_revenue_share2": "20% développement & marketing",
+            "rwa_revenue_share3": "10% audits légaux & sécurité",
+            "rwa_legal_title": "⚖️ Conformité & Légal",
+            "rwa_legal_1": "✓ KYC/AML inclus pour tous les investisseurs",
+            "rwa_legal_2": "✓ Structure juridique conforme aux régulations",
+            "rwa_legal_3": "✓ Partenariat avec cabinets d'avocats internationaux",
+            "rwa_legal_4": "✓ Audit de sécurité obligatoire",
+            "rwa_create_btn": "🚀 CRÉER MON RWA / NFT (0.15 BNB)",
+            "rwa_btn_note": "Les fonds sont sécurisés et remboursés si l'actif ne passe pas la due diligence",
+            "rwa_partners_title": "Nos partenaires juridiques & techniques",
+            "rwa_partner1_title": "Cabinets d'avocats",
+            "rwa_partner1_desc": "Moscou, Dubai, Singapour, Luxembourg",
+            "rwa_partner2_title": "Custodie agréée",
+            "rwa_partner2_desc": "Banques partenaires, coffres certifiés",
+            "rwa_partner3_title": "Experts en évaluation",
+            "rwa_partner3_desc": "Géologues, experts en gemmes, commissaires-priseurs",
+            "rwa_partner4_title": "Chainlink oracles",
+            "rwa_partner4_desc": "Prix en temps réel, données vérifiées",
+            "rwa_partner5_title": "SPV formation",
+            "rwa_partner5_desc": "Cayman, BVI, Delaware, UAE",
+            "rwa_faq_title": "❓ Questions fréquentes sur les RWA",
+            "rwa_faq1_q": "C'est quoi un RWA ?",
+            "rwa_faq1_a": "Un actif du monde réel (immeuble, or, concession) tokenisé sur blockchain.",
+            "rwa_faq2_q": "Est-ce légal ?",
+            "rwa_faq2_a": "Oui, avec la bonne structure (SPV) et KYC. Nous vous accompagnons.",
+            "rwa_faq3_q": "Combien ça coûte ?",
+            "rwa_faq3_a": "0.15 BNB de base + options. 70% redistribué aux holders ZND.",
+            "rwa_faq4_q": "Quels actifs sont éligibles ?",
+            "rwa_faq4_a": "Tout actif légal avec documentation : mineraux, immobilier, art, crédit...",
+            "rwa_faq5_q": "Comment les acheteurs sont protégés ?",
+            "rwa_faq5_a": "Due diligence, audit, custody, et structure légale dédiée.",
+            "rwa_faq6_q": "Puis-je revendre mes tokens ?",
+            "rwa_faq6_a": "Oui, sur notre marketplace secondaire intégrée."
         },
         en: {
             company_name: "MineralX Holding", 
@@ -2536,7 +2969,131 @@
             "rwa_option_luxury_goods": "⌚ Luxury Goods (watches, bags, cars)",
             "rwa_option_fossil": "🦖 Fossils & Rare Minerals",
             "rwa_option_mineral_nft_art": "🎨 Artistic NFTs on mineral theme",
-            "rwa_option_mineral_education": "📚 Educational NFTs (geology, minerals)"
+            "rwa_option_mineral_education": "📚 Educational NFTs (geology, minerals)",
+            "rwa_cat_mining_title": "Mines & Concessions",
+            "rwa_cat_mining_desc": "Tokenize your mining rights, concessions, exploration permits",
+            "rwa_cat_mining_stat1": "💰 Yield: 8-15%",
+            "rwa_cat_mining_stat2": "🔗 Lithium, Cobalt, Nickel, Gold",
+            "rwa_cat_minerals_title": "Physical Minerals",
+            "rwa_cat_minerals_desc": "Lithium, cobalt, uranium, rare earths in physical stock",
+            "rwa_cat_minerals_stat1": "📊 Market size: $4.1B",
+            "rwa_cat_minerals_stat2": "🔐 Licensed custody",
+            "rwa_cat_realestate_title": "Fractional Real Estate",
+            "rwa_cat_realestate_desc": "Buildings, offices, land in micro-shares",
+            "rwa_cat_realestate_stat1": "📈 Fractionalizable",
+            "rwa_cat_realestate_stat2": "🏛️ SPV included",
+            "rwa_cat_art_title": "Art & Collections",
+            "rwa_cat_art_desc": "Paintings, sculptures, rare items tokenized",
+            "rwa_cat_art_stat1": "🖼️ Expertise included",
+            "rwa_cat_art_stat2": "🔍 Authenticity guaranteed",
+            "rwa_cat_gems_title": "Gemstone NFTs",
+            "rwa_cat_gems_desc": "Diamonds, emeralds, sapphires with certificate",
+            "rwa_cat_gems_stat1": "💎 GIA certified",
+            "rwa_cat_gems_stat2": "📸 3D scan included",
+            "rwa_cat_treasury_title": "Treasury Bonds",
+            "rwa_cat_treasury_desc": "Government bonds, sovereign debt tokenized",
+            "rwa_cat_treasury_stat1": "🇺🇸 Yield 4-6%",
+            "rwa_cat_treasury_stat2": "📊 $9-10B market",
+            "rwa_cat_credit_title": "Private Credit",
+            "rwa_cat_credit_desc": "Commercial invoices, business loans",
+            "rwa_cat_credit_stat1": "📈 Yield 8-12%",
+            "rwa_cat_credit_stat2": "🏦 $2-6B market",
+            "rwa_cat_commodity_title": "Commodities",
+            "rwa_cat_commodity_desc": "Coffee, cocoa, wheat, cotton in stock",
+            "rwa_cat_commodity_stat1": "☕ Traceable",
+            "rwa_cat_commodity_stat2": "🌍 Guaranteed origin",
+            "rwa_cat_energy_title": "Energy & Carbon",
+            "rwa_cat_energy_desc": "Carbon credits, oil exploitation rights",
+            "rwa_cat_energy_stat1": "🌱 ESG compliant",
+            "rwa_cat_energy_stat2": "📉 $2B market",
+            "rwa_cat_ip_title": "Intellectual Property",
+            "rwa_cat_ip_desc": "Patents, copyrights, trademarks",
+            "rwa_cat_ip_stat1": "⚖️ Legal framework",
+            "rwa_cat_ip_stat2": "💸 Automatic royalties",
+            "rwa_cat_luxury_title": "Luxury Goods",
+            "rwa_cat_luxury_desc": "Watches, Hermès bags, collector cars",
+            "rwa_cat_luxury_stat1": "✅ Authentication",
+            "rwa_cat_luxury_stat2": "📈 Secondary market",
+            "rwa_cat_fossil_title": "Fossils & Rare Minerals",
+            "rwa_cat_fossil_desc": "Unique specimens for collectors",
+            "rwa_cat_fossil_stat1": "🔬 Certified",
+            "rwa_cat_fossil_stat2": "🏛️ Museum partners",
+            "rwa_interface_title": "🛠️ RWA/NFT Creation Assistant",
+            "rwa_section1_title": "1. Describe your asset",
+            "rwa_label_name": "Asset Name *",
+            "rwa_label_description": "Detailed Description",
+            "rwa_label_location": "Location",
+            "rwa_label_year": "Year Acquired",
+            "rwa_label_value": "Estimated Value (USD) *",
+            "rwa_label_supply": "Number of tokens to create *",
+            "rwa_supply_hint": "Each token will represent 1/[supply] of the asset",
+            "rwa_section2_title": "2. Legal Documents & Proofs",
+            "rwa_doc_title": "Title Deed",
+            "rwa_doc_certificate": "Certificate of Authenticity",
+            "rwa_doc_valuation": "Valuation Report",
+            "rwa_doc_geological": "Geological Report",
+            "rwa_doc_legal": "Legal Opinion",
+            "rwa_doc_custody": "Proof of Deposit/Custody",
+            "rwa_doc_insurance": "Insurance Certificate",
+            "rwa_doc_other": "Other Document",
+            "rwa_add_doc": "+ Add a document",
+            "rwa_doc_note": "📌 PDF, JPG, PNG accepted. Documents will be verified by our team.",
+            "rwa_section3_title": "3. Advanced Options",
+            "rwa_option_kyc": "🔐 Mandatory KYC for buyers",
+            "rwa_option_spv": "🏛️ Create an SPV (dedicated legal structure)",
+            "rwa_option_oracle": "📊 Integrate price oracle (Chainlink)",
+            "rwa_option_geolock": "🌍 Restrict by geolocation",
+            "rwa_option_revenue": "💸 Automatic revenue distribution",
+            "rwa_option_voting": "🗳️ Voting rights for holders",
+            "rwa_option_burn": "🔥 Burn function (buyback/destruction)",
+            "rwa_option_secondary": "🔄 Automatic listing on secondary marketplace",
+            "rwa_summary_title": "📋 Summary",
+            "rwa_summary_type": "Asset type:",
+            "rwa_summary_type_default": "Mining Concession",
+            "rwa_summary_name": "Name:",
+            "rwa_summary_value": "Total value:",
+            "rwa_summary_supply": "Tokens created:",
+            "rwa_summary_per_token": "Value per token:",
+            "rwa_summary_docs": "Documents:",
+            "rwa_pricing_title": "💰 Creation Fees",
+            "rwa_pricing_base": "Base fee:",
+            "rwa_pricing_spv": "SPV (optional):",
+            "rwa_pricing_oracle": "Oracle integration:",
+            "rwa_pricing_total": "Total:",
+            "rwa_revenue_share1": "🎁 <strong>70% of fees redistributed to ZND holders</strong>",
+            "rwa_revenue_share2": "20% development & marketing",
+            "rwa_revenue_share3": "10% legal audits & security",
+            "rwa_legal_title": "⚖️ Compliance & Legal",
+            "rwa_legal_1": "✓ KYC/AML included for all investors",
+            "rwa_legal_2": "✓ Legal structure compliant with regulations",
+            "rwa_legal_3": "✓ Partnerships with international law firms",
+            "rwa_legal_4": "✓ Mandatory security audit",
+            "rwa_create_btn": "🚀 CREATE MY RWA / NFT (0.15 BNB)",
+            "rwa_btn_note": "Funds are secured and refunded if the asset fails due diligence",
+            "rwa_partners_title": "Our legal & technical partners",
+            "rwa_partner1_title": "Law Firms",
+            "rwa_partner1_desc": "Moscow, Dubai, Singapore, Luxembourg",
+            "rwa_partner2_title": "Licensed Custody",
+            "rwa_partner2_desc": "Partner banks, certified vaults",
+            "rwa_partner3_title": "Valuation Experts",
+            "rwa_partner3_desc": "Geologists, gem experts, auctioneers",
+            "rwa_partner4_title": "Chainlink Oracles",
+            "rwa_partner4_desc": "Real-time prices, verified data",
+            "rwa_partner5_title": "SPV Formation",
+            "rwa_partner5_desc": "Cayman, BVI, Delaware, UAE",
+            "rwa_faq_title": "❓ Frequently Asked Questions about RWAs",
+            "rwa_faq1_q": "What is an RWA?",
+            "rwa_faq1_a": "A real-world asset (building, gold, concession) tokenized on blockchain.",
+            "rwa_faq2_q": "Is it legal?",
+            "rwa_faq2_a": "Yes, with the right structure (SPV) and KYC. We guide you.",
+            "rwa_faq3_q": "How much does it cost?",
+            "rwa_faq3_a": "0.15 BNB base + options. 70% redistributed to ZND holders.",
+            "rwa_faq4_q": "Which assets are eligible?",
+            "rwa_faq4_a": "Any legal asset with documentation: minerals, real estate, art, credit...",
+            "rwa_faq5_q": "How are buyers protected?",
+            "rwa_faq5_a": "Due diligence, audit, custody, and dedicated legal structure.",
+            "rwa_faq6_q": "Can I resell my tokens?",
+            "rwa_faq6_a": "Yes, on our integrated secondary marketplace."
         },
         ru: {
             company_name: "MineralX Holding",
@@ -2647,22 +3204,142 @@
             "rwa_option_luxury_goods": "⌚ Предметы роскоши (часы, сумки, автомобили)",
             "rwa_option_fossil": "🦖 Окаменелости и редкие минералы",
             "rwa_option_mineral_nft_art": "🎨 Художественные NFT на минеральную тематику",
-            "rwa_option_mineral_education": "📚 Образовательные NFT (геология, минералы)"
+            "rwa_option_mineral_education": "📚 Образовательные NFT (геология, минералы)",
+            "rwa_cat_mining_title": "Шахты и концессии",
+            "rwa_cat_mining_desc": "Токенизируйте свои права на добычу, концессии, лицензии на разведку",
+            "rwa_cat_mining_stat1": "💰 Доходность: 8-15%",
+            "rwa_cat_mining_stat2": "🔗 Литий, Кобальт, Никель, Золото",
+            "rwa_cat_minerals_title": "Физические минералы",
+            "rwa_cat_minerals_desc": "Литий, кобальт, уран, редкоземельные металлы в физическом наличии",
+            "rwa_cat_minerals_stat1": "📊 Размер рынка: $4.1B",
+            "rwa_cat_minerals_stat2": "🔐 Лицензированное хранение",
+            "rwa_cat_realestate_title": "Дробная недвижимость",
+            "rwa_cat_realestate_desc": "Здания, офисы, земля в микродолях",
+            "rwa_cat_realestate_stat1": "📈 Дробление",
+            "rwa_cat_realestate_stat2": "🏛️ SPV включен",
+            "rwa_cat_art_title": "Искусство и коллекции",
+            "rwa_cat_art_desc": "Картины, скульптуры, редкие предметы токенизированы",
+            "rwa_cat_art_stat1": "🖼️ Экспертиза включена",
+            "rwa_cat_art_stat2": "🔍 Подлинность гарантирована",
+            "rwa_cat_gems_title": "NFT драгоценных камней",
+            "rwa_cat_gems_desc": "Бриллианты, изумруды, сапфиры с сертификатом",
+            "rwa_cat_gems_stat1": "💎 GIA сертифицирован",
+            "rwa_cat_gems_stat2": "📸 3D сканирование включено",
+            "rwa_cat_treasury_title": "Казначейские облигации",
+            "rwa_cat_treasury_desc": "Государственные облигации, суверенный долг токенизирован",
+            "rwa_cat_treasury_stat1": "🇺🇸 Доходность 4-6%",
+            "rwa_cat_treasury_stat2": "📊 Рынок $9-10B",
+            "rwa_cat_credit_title": "Частный кредит",
+            "rwa_cat_credit_desc": "Коммерческие счета, бизнес-кредиты",
+            "rwa_cat_credit_stat1": "📈 Доходность 8-12%",
+            "rwa_cat_credit_stat2": "🏦 Рынок $2-6B",
+            "rwa_cat_commodity_title": "Сырьевые товары",
+            "rwa_cat_commodity_desc": "Кофе, какао, пшеница, хлопок в наличии",
+            "rwa_cat_commodity_stat1": "☕ Отслеживаемый",
+            "rwa_cat_commodity_stat2": "🌍 Гарантированное происхождение",
+            "rwa_cat_energy_title": "Энергия и углерод",
+            "rwa_cat_energy_desc": "Углеродные кредиты, права на разработку нефти",
+            "rwa_cat_energy_stat1": "🌱 ESG соответствие",
+            "rwa_cat_energy_stat2": "📉 Рынок $2B",
+            "rwa_cat_ip_title": "Интеллектуальная собственность",
+            "rwa_cat_ip_desc": "Патенты, авторские права, товарные знаки",
+            "rwa_cat_ip_stat1": "⚖️ Правовая база",
+            "rwa_cat_ip_stat2": "💸 Автоматические роялти",
+            "rwa_cat_luxury_title": "Предметы роскоши",
+            "rwa_cat_luxury_desc": "Часы, сумки Hermès, коллекционные автомобили",
+            "rwa_cat_luxury_stat1": "✅ Аутентификация",
+            "rwa_cat_luxury_stat2": "📈 Вторичный рынок",
+            "rwa_cat_fossil_title": "Окаменелости и редкие минералы",
+            "rwa_cat_fossil_desc": "Уникальные образцы для коллекционеров",
+            "rwa_cat_fossil_stat1": "🔬 Сертифицированные",
+            "rwa_cat_fossil_stat2": "🏛️ Партнеры музеи",
+            "rwa_interface_title": "🛠️ Помощник по созданию RWA/NFT",
+            "rwa_section1_title": "1. Опишите ваш актив",
+            "rwa_label_name": "Название актива *",
+            "rwa_label_description": "Подробное описание",
+            "rwa_label_location": "Местоположение",
+            "rwa_label_year": "Год приобретения",
+            "rwa_label_value": "Оценочная стоимость (USD) *",
+            "rwa_label_supply": "Количество создаваемых токенов *",
+            "rwa_supply_hint": "Каждый токен будет представлять 1/[supply] актива",
+            "rwa_section2_title": "2. Юридические документы и доказательства",
+            "rwa_doc_title": "Правоустанавливающий документ",
+            "rwa_doc_certificate": "Сертификат подлинности",
+            "rwa_doc_valuation": "Отчет об оценке",
+            "rwa_doc_geological": "Геологический отчет",
+            "rwa_doc_legal": "Юридическое заключение",
+            "rwa_doc_custody": "Подтверждение депозита/хранения",
+            "rwa_doc_insurance": "Сертификат страхования",
+            "rwa_doc_other": "Другой документ",
+            "rwa_add_doc": "+ Добавить документ",
+            "rwa_doc_note": "📌 PDF, JPG, PNG принимаются. Документы будут проверены нашей командой.",
+            "rwa_section3_title": "3. Расширенные настройки",
+            "rwa_option_kyc": "🔐 Обязательный KYC для покупателей",
+            "rwa_option_spv": "🏛️ Создать SPV (выделенная юридическая структура)",
+            "rwa_option_oracle": "📊 Интегрировать ценовой оракул (Chainlink)",
+            "rwa_option_geolock": "🌍 Ограничить по геолокации",
+            "rwa_option_revenue": "💸 Автоматическое распределение доходов",
+            "rwa_option_voting": "🗳️ Право голоса для держателей",
+            "rwa_option_burn": "🔥 Функция сжигания (выкуп/уничтожение)",
+            "rwa_option_secondary": "🔄 Автоматический листинг на вторичном рынке",
+            "rwa_summary_title": "📋 Сводка",
+            "rwa_summary_type": "Тип актива:",
+            "rwa_summary_type_default": "Горнодобывающая концессия",
+            "rwa_summary_name": "Название:",
+            "rwa_summary_value": "Общая стоимость:",
+            "rwa_summary_supply": "Создано токенов:",
+            "rwa_summary_per_token": "Стоимость за токен:",
+            "rwa_summary_docs": "Документы:",
+            "rwa_pricing_title": "💰 Комиссия за создание",
+            "rwa_pricing_base": "Базовая комиссия:",
+            "rwa_pricing_spv": "SPV (опционально):",
+            "rwa_pricing_oracle": "Интеграция оракула:",
+            "rwa_pricing_total": "Итого:",
+            "rwa_revenue_share1": "🎁 <strong>70% комиссий распределяется держателям ZND</strong>",
+            "rwa_revenue_share2": "20% разработка и маркетинг",
+            "rwa_revenue_share3": "10% юридические аудиты и безопасность",
+            "rwa_legal_title": "⚖️ Соответствие и юриспруденция",
+            "rwa_legal_1": "✓ KYC/AML включен для всех инвесторов",
+            "rwa_legal_2": "✓ Юридическая структура соответствует нормативным требованиям",
+            "rwa_legal_3": "✓ Партнерство с международными юридическими фирмами",
+            "rwa_legal_4": "✓ Обязательный аудит безопасности",
+            "rwa_create_btn": "🚀 СОЗДАТЬ МОЙ RWA / NFT (0.15 BNB)",
+            "rwa_btn_note": "Средства защищены и возвращаются, если актив не проходит комплексную проверку",
+            "rwa_partners_title": "Наши юридические и технические партнеры",
+            "rwa_partner1_title": "Юридические фирмы",
+            "rwa_partner1_desc": "Москва, Дубай, Сингапур, Люксембург",
+            "rwa_partner2_title": "Лицензированное хранение",
+            "rwa_partner2_desc": "Банки-партнеры, сертифицированные хранилища",
+            "rwa_partner3_title": "Эксперты по оценке",
+            "rwa_partner3_desc": "Геологи, эксперты по драгоценным камням, аукционисты",
+            "rwa_partner4_title": "Оракулы Chainlink",
+            "rwa_partner4_desc": "Цены в реальном времени, проверенные данные",
+            "rwa_partner5_title": "Формирование SPV",
+            "rwa_partner5_desc": "Каймановы острова, BVI, Делавэр, ОАЭ",
+            "rwa_faq_title": "❓ Часто задаваемые вопросы о RWA",
+            "rwa_faq1_q": "Что такое RWA?",
+            "rwa_faq1_a": "Реальный актив (здание, золото, концессия), токенизированный на блокчейне.",
+            "rwa_faq2_q": "Это законно?",
+            "rwa_faq2_a": "Да, с правильной структурой (SPV) и KYC. Мы вас сопровождаем.",
+            "rwa_faq3_q": "Сколько это стоит?",
+            "rwa_faq3_a": "0.15 BNB базовая + опции. 70% распределяется держателям ZND.",
+            "rwa_faq4_q": "Какие активы подходят?",
+            "rwa_faq4_a": "Любой законный актив с документацией: минералы, недвижимость, искусство, кредит...",
+            "rwa_faq5_q": "Как защищены покупатели?",
+            "rwa_faq5_a": "Комплексная проверка, аудит, хранение и выделенная юридическая структура.",
+            "rwa_faq6_q": "Могу ли я перепродать свои токены?",
+            "rwa_faq6_a": "Да, на нашем интегрированном вторичном рынке."
         }
     };
 
-    // Language switching
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             const lang = this.getAttribute('data-lang');
-            
             document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            
             const elements = document.querySelectorAll('[data-translate]');
             elements.forEach(element => {
                 const key = element.getAttribute('data-translate');
-                
                 if (translations[lang] && translations[lang][key]) {
                     if (element.hasAttribute('placeholder')) {
                         element.setAttribute('placeholder', translations[lang][key]);
@@ -2673,11 +3350,9 @@
                     }
                 }
             });
-
             const factoryElements = document.querySelectorAll('[data-lang-key]');
             factoryElements.forEach(element => {
                 const key = element.getAttribute('data-lang-key');
-                
                 if (translations[lang] && translations[lang][key]) {
                     if (element.tagName === 'INPUT' || element.tagName === 'SELECT' || element.tagName === 'TEXTAREA') {
                         element.setAttribute('placeholder', translations[lang][key]);
@@ -2691,7 +3366,6 @@
         });
     });
 
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -2702,7 +3376,6 @@
         });
     });
 
-    // Animation on scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -2719,21 +3392,17 @@
         observer.observe(card);
     });
 
-    // Countdown timer
     function updateCountdown() {
         const targetDate = new Date('2024-02-01T00:00:00').getTime();
         const now = new Date().getTime();
         const difference = targetDate - now;
-
         if (difference > 0) {
             const days = Math.floor(difference / (1000 * 60 * 60 * 24));
             const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-
             const daysElement = document.getElementById('days');
             const hoursElement = document.getElementById('hours');
             const minutesElement = document.getElementById('minutes');
-            
             if (daysElement) daysElement.textContent = days.toString().padStart(2, '0');
             if (hoursElement) hoursElement.textContent = hours.toString().padStart(2, '0');
             if (minutesElement) minutesElement.textContent = minutes.toString().padStart(2, '0');
@@ -2743,7 +3412,6 @@
     updateCountdown();
     setInterval(updateCountdown, 60000);
 
-    // Whitelist form
     const whitelistForm = document.querySelector('.whitelist-form');
     if (whitelistForm) {
         whitelistForm.addEventListener('submit', function(e) {
@@ -2753,7 +3421,6 @@
         });
     }
 
-    // Factory form validation
     document.addEventListener('DOMContentLoaded', function() {
         const tokenNameInput = document.getElementById('tokenName');
         const tokenSymbolInput = document.getElementById('tokenSymbol');
@@ -2762,10 +3429,7 @@
         const createTokenBtn = document.getElementById('createTokenBtn');
 
         function validateForm() {
-            const nameValid = tokenNameInput.value.trim().length >= 2;
-            const symbolValid = tokenSymbolInput.value.trim().length >= 2;
-            const supplyValid = tokenSupplyInput.value >= 1000;
-            return nameValid && symbolValid && supplyValid;
+            return tokenNameInput.value.trim().length >= 2 && tokenSymbolInput.value.trim().length >= 2 && tokenSupplyInput.value >= 1000;
         }
 
         function updateButtonState() {
@@ -2791,12 +3455,10 @@
                 const tokenSymbol = tokenSymbolInput.value.trim().toUpperCase();
                 const tokenType = tokenTypeSelect.value;
                 const tokenSupply = tokenSupplyInput.value;
-                
                 const statusBox = document.getElementById('statusBox');
                 statusBox.className = 'status-box status-info';
                 statusBox.style.display = 'block';
                 statusBox.innerHTML = `🔄 Déploiement de <strong>${tokenName} (${tokenSymbol})</strong> en cours...<br>Frais: <strong>0.10 BNB</strong><br>Type: ${getTokenTypeName(tokenType)}<br>Supply: ${formatNumber(tokenSupply)} tokens`;
-                
                 setTimeout(() => {
                     const contractAddress = '0x' + Math.random().toString(16).substr(2, 10) + '...' + Math.random().toString(16).substr(2, 6);
                     statusBox.className = 'status-box status-success';
@@ -2812,20 +3474,13 @@
                         <small>🎉 70% des frais (0.07 BNB) seront distribués aux stakers ZND.<br>
                         Votre token sera visible dans votre portefeuille dans quelques minutes.</small>
                     `;
-                    
                     addToSuccessStories(tokenName, tokenSymbol, tokenType);
                 }, 3000);
             }
         });
 
         function getTokenTypeName(type) {
-            const types = {
-                'memecoin': 'Memecoin',
-                'utility': 'Utility Token',
-                'stablecoin': 'Stablecoin',
-                'governance': 'Governance Token',
-                'nft': 'Collection NFT'
-            };
+            const types = { 'memecoin': 'Memecoin', 'utility': 'Utility Token', 'stablecoin': 'Stablecoin', 'governance': 'Governance Token', 'nft': 'Collection NFT' };
             return types[type] || 'Token';
         }
 
@@ -2838,45 +3493,127 @@
             if (storiesGrid) {
                 const story = document.createElement('div');
                 story.className = 'story';
-                
-                let performance = '';
-                if (type === 'memecoin') {
-                    performance = '+250% dès le lancement';
-                } else if (type === 'utility') {
-                    performance = 'Utility token ecosystem';
-                } else if (type === 'nft') {
-                    performance = 'Collection NFT lancée';
-                } else {
-                    performance = 'Token déployé avec succès';
-                }
-                
-                story.innerHTML = `
-                    <strong>${name}</strong> <span class="symbol">${symbol}</span>
-                    <small>${performance}</small>
-                `;
-                
+                let performance = type === 'memecoin' ? '+250% dès le lancement' : type === 'utility' ? 'Utility token ecosystem' : type === 'nft' ? 'Collection NFT lancée' : 'Token déployé avec succès';
+                story.innerHTML = `<strong>${name}</strong> <span class="symbol">${symbol}</span><small>${performance}</small>`;
                 storiesGrid.prepend(story);
-                
                 const stories = storiesGrid.querySelectorAll('.story');
-                if (stories.length > 5) {
-                    stories[stories.length - 1].remove();
-                }
+                if (stories.length > 5) stories[stories.length - 1].remove();
             }
         }
 
         updateButtonState();
-        
-        const langButtons = document.querySelectorAll('.lang-btn');
-        langButtons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                setTimeout(updateButtonState, 100);
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => setTimeout(updateButtonState, 100)));
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const assetType = document.getElementById('rwa-asset-type');
+        const assetName = document.getElementById('asset-name');
+        const assetValue = document.getElementById('asset-value');
+        const assetSupply = document.getElementById('asset-supply');
+        const createBtn = document.getElementById('create-rwa-btn');
+        const summaryAssetType = document.getElementById('summary-asset-type');
+        const summaryAssetName = document.getElementById('summary-asset-name');
+        const summaryValue = document.getElementById('summary-value');
+        const summarySupply = document.getElementById('summary-supply');
+        const summaryPerToken = document.getElementById('summary-per-token');
+        const summaryDocs = document.getElementById('summary-docs');
+        const totalFee = document.getElementById('total-fee');
+        const optionSpv = document.getElementById('option-spv');
+        const optionOracle = document.getElementById('option-oracle');
+
+        if (assetType) {
+            assetType.addEventListener('change', function() {
+                if (summaryAssetType) summaryAssetType.textContent = this.options[this.selectedIndex].text.split(' ').slice(1).join(' ');
             });
-        });
+        }
+        if (assetName) assetName.addEventListener('input', function() { if (summaryAssetName) summaryAssetName.textContent = this.value || '—'; });
+        
+        function updateValue() {
+            const value = parseFloat(assetValue?.value) || 0;
+            const supply = parseFloat(assetSupply?.value) || 1000;
+            if (summaryValue) summaryValue.textContent = value.toLocaleString() + ' USD';
+            if (summarySupply) summarySupply.textContent = supply.toLocaleString();
+            if (summaryPerToken) summaryPerToken.textContent = (value / supply).toFixed(2) + ' USD';
+        }
+        if (assetValue) assetValue.addEventListener('input', updateValue);
+        if (assetSupply) assetSupply.addEventListener('input', updateValue);
+        
+        function updateDocsCount() { if (summaryDocs) summaryDocs.textContent = document.querySelectorAll('.document-item').length; }
+        const addDocBtn = document.getElementById('add-document');
+        const docsContainer = document.getElementById('documents-container');
+        if (addDocBtn && docsContainer) {
+            addDocBtn.addEventListener('click', function() {
+                const docItem = document.createElement('div');
+                docItem.className = 'document-item';
+                docItem.innerHTML = `<select class="doc-type"><option value="title">Titre de propriété</option><option value="certificate">Certificat d'authenticité</option><option value="valuation">Rapport d'évaluation</option><option value="geological">Rapport géologique</option><option value="legal">Avis juridique</option><option value="custody">Preuve de dépôt/custodie</option><option value="insurance">Certificat d'assurance</option><option value="other">Autre document</option></select><input type="file" class="doc-file" accept=".pdf,.jpg,.png"><button class="remove-doc">❌</button>`;
+                docsContainer.appendChild(docItem);
+                updateDocsCount();
+                docItem.querySelector('.remove-doc').addEventListener('click', function() { docItem.remove(); updateDocsCount(); });
+            });
+        }
+        document.querySelectorAll('.remove-doc').forEach(btn => btn.addEventListener('click', function() { this.closest('.document-item').remove(); updateDocsCount(); }));
+        
+        function updateFees() {
+            let fee = 0.15;
+            if (optionSpv?.checked) fee += 0.05;
+            if (optionOracle?.checked) fee += 0.02;
+            if (totalFee) totalFee.textContent = fee.toFixed(2) + ' BNB';
+        }
+        if (optionSpv) optionSpv.addEventListener('change', updateFees);
+        if (optionOracle) optionOracle.addEventListener('change', updateFees);
+        
+        document.querySelectorAll('.rwa-category-card').forEach(card => card.addEventListener('click', () => document.querySelector('.creation-interface').scrollIntoView({ behavior: 'smooth' })));
+        
+        if (createBtn) {
+            createBtn.addEventListener('click', function() {
+                if (!assetName?.value) { alert('Veuillez entrer un nom pour votre actif'); return; }
+                if (!assetValue?.value || parseFloat(assetValue.value) <= 0) { alert('Veuillez entrer une valeur valide'); return; }
+                const docs = document.querySelectorAll('.document-item').length;
+                if (docs === 0 && !confirm('Aucun document ajouté. Continuer quand même ?')) return;
+                this.disabled = true;
+                const originalText = this.textContent;
+                this.textContent = '🔄 Création en cours... (0.15 BNB)';
+                const type = assetType?.options[assetType.selectedIndex]?.text || 'RWA';
+                const name = assetName.value;
+                const value = assetValue.value;
+                const supply = assetSupply.value;
+                setTimeout(() => {
+                    const statusDiv = document.createElement('div');
+                    statusDiv.className = 'status-box status-success';
+                    statusDiv.style.marginTop = '20px';
+                    statusDiv.style.padding = '20px';
+                    statusDiv.style.background = 'rgba(16, 185, 129, 0.2)';
+                    statusDiv.style.border = '1px solid #10b981';
+                    statusDiv.style.borderRadius = '10px';
+                    statusDiv.style.color = '#86efac';
+                    statusDiv.innerHTML = `
+                        ✅ <strong>${name}</strong> créé avec succès !<br>
+                        <br>
+                        📊 <strong>Détails:</strong><br>
+                        • Type: ${type}<br>
+                        • Valeur totale: ${parseFloat(value).toLocaleString()} USD<br>
+                        • Tokens: ${parseInt(supply).toLocaleString()} parts<br>
+                        • Valeur par token: ${(parseFloat(value)/parseInt(supply)).toFixed(2)} USD<br>
+                        • Frais: ${totalFee?.textContent || '0.15 BNB'}<br>
+                        <br>
+                        <small>🎉 70% des frais reversés aux holders ZND<br>
+                        Notre équipe va vérifier vos documents sous 24-48h.</small>
+                    `;
+                    this.parentNode.insertBefore(statusDiv, this.nextSibling);
+                    this.disabled = false;
+                    this.textContent = originalText;
+                    statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 2000);
+            });
+        }
+        
+        updateValue();
+        updateDocsCount();
+        updateFees();
     });
 
     console.log('Translation system loaded successfully!');
     </script>
-
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 </body>
 </html>
