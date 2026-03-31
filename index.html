@@ -1781,6 +1781,7 @@
         <div class="container">
             <h2 class="section-title" data-translate="tokens_title">Our Token Ecosystem</h2>
             <div class="tokens-grid">
+                <!-- ZND Card - Featured -->
                 <div class="token-card featured-token">
                     <div class="token-badge" data-translate="featured_badge">🔥 Featured</div>
                     <div class="token-logo">
@@ -1811,6 +1812,43 @@
                     </div>
                 </div>
 
+                <!-- NFX Card - Token Pétrole (NOUVEAU) -->
+                <div class="token-card">
+                    <div class="token-logo">
+                        <img src="https://i.ibb.co/8sY4QkF/NFX-logo.png" alt="NFX">
+                    </div>
+                    <h3>NaftaX</h3>
+                    <div class="token-symbol">NFX</div>
+                    <p class="token-description" data-translate="nfx_desc">
+                        Token indexé sur le pétrole Brent. Chaque NFX suit le prix du baril en temps réel via Chainlink oracle. Protégez votre portefeuille contre la volatilité des prix de l'énergie.
+                    </p>
+                    <div class="token-metrics">
+                        <div class="metric">
+                            <span>Indexation</span>
+                            <strong>Pétrole Brent</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Prix actuel</span>
+                            <strong id="nfx-price">$0.00</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Private Sale</span>
+                            <strong>$0.20 / NFX</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Bonus early</span>
+                            <strong>20%</strong>
+                        </div>
+                    </div>
+                    <div class="token-links">
+                        <a href="https://bscscan.com/token/0x4a5e342f42dbf860d59cEF73D8a9E268a4D9f24f" class="token-link" target="_blank" data-translate="link_bscscan">BscScan</a>
+                        <a href="https://pancakeswap.finance/swap?outputCurrency=0x4a5e342f42dbf860d59cEF73D8a9E268a4D9f24f" class="token-link primary" target="_blank">Buy on PancakeSwap</a>
+                        <a href="#whitelist" class="token-link" data-translate="link_whitelist">Private Sale</a>
+                        <button onclick="addNFXToMetaMask()" class="token-link" style="cursor: pointer;">➕ Add to MetaMask</button>
+                    </div>
+                </div>
+
+                <!-- LTHX Card - Token Lithium (MISE À JOUR) -->
                 <div class="token-card">
                     <div class="token-logo">
                         <img src="https://i.ibb.co/C5PBYLgh/Lithix-logo.png" alt="Lithix">
@@ -1818,11 +1856,31 @@
                     <h3>Lithix</h3>
                     <div class="token-symbol">LTHX</div>
                     <p class="token-description" data-translate="lithix_desc">
-                        Lithium-indexed stablecoin with real reserves. Each token is backed by verifiable physical lithium.
+                        Token indexé sur le lithium. Chaque LTHX suit le prix de la tonne de lithium via Chainlink oracle. Protégez votre portefeuille contre la volatilité des matières premières stratégiques.
                     </p>
+                    <div class="token-metrics">
+                        <div class="metric">
+                            <span>Indexation</span>
+                            <strong>Lithium (LME)</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Prix actuel</span>
+                            <strong>$0.0026</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Private Sale</span>
+                            <strong>$0.15 / LTHX</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Bonus early</span>
+                            <strong>20%</strong>
+                        </div>
+                    </div>
                     <div class="token-links">
-                        <a href="https://testnet.bscscan.com/token/0x648668e3FffFDFFCAF56F924aF15f65277Ce35F0" class="token-link" target="_blank" data-translate="link_bscscan">BscScan (Testnet)</a>
-                        <a href="#" class="token-link" data-translate="link_buy">Coming Soon</a>
+                        <a href="https://bscscan.com/token/0x7D1A7aF6634AE940C939a0AF826a7b138Ab5b265" class="token-link" target="_blank" data-translate="link_bscscan">BscScan</a>
+                        <a href="https://pancakeswap.finance/swap?outputCurrency=0x7D1A7aF6634AE940C939a0AF826a7b138Ab5b265" class="token-link primary" target="_blank">Buy on PancakeSwap</a>
+                        <a href="#whitelist" class="token-link" data-translate="link_whitelist">Private Sale</a>
+                        <button onclick="addLTHXToMetaMask()" class="token-link" style="cursor: pointer;">➕ Add to MetaMask</button>
                     </div>
                 </div>
 
@@ -2599,6 +2657,7 @@
     </footer>
 
     <script>
+    // Fonctions MetaMask
     async function addZNDToMetaMask() {
         if (window.ethereum) {
             try {
@@ -2618,6 +2677,56 @@
             } catch (error) {
                 console.log("Error", error);
                 alert("Error adding ZND to MetaMask");
+            }
+        } else {
+            alert("MetaMask not installed");
+        }
+    }
+
+    async function addNFXToMetaMask() {
+        if (window.ethereum) {
+            try {
+                await window.ethereum.request({
+                    method: 'wallet_watchAsset',
+                    params: {
+                        type: 'ERC20',
+                        options: {
+                            address: '0x4a5e342f42dbf860d59cEF73D8a9E268a4D9f24f',
+                            symbol: 'NFX',
+                            decimals: 18,
+                            image: 'https://mineralx.io/images/nfx-logo.png'
+                        }
+                    }
+                });
+                alert('NFX added to MetaMask!');
+            } catch (error) {
+                console.log("Error", error);
+                alert("Error adding NFX to MetaMask");
+            }
+        } else {
+            alert("MetaMask not installed");
+        }
+    }
+
+    async function addLTHXToMetaMask() {
+        if (window.ethereum) {
+            try {
+                await window.ethereum.request({
+                    method: 'wallet_watchAsset',
+                    params: {
+                        type: 'ERC20',
+                        options: {
+                            address: '0x7D1A7aF6634AE940C939a0AF826a7b138Ab5b265',
+                            symbol: 'LTHX',
+                            decimals: 18,
+                            image: 'https://mineralx.io/images/lithix-logo.png'
+                        }
+                    }
+                });
+                alert('LTHX added to MetaMask!');
+            } catch (error) {
+                console.log("Error", error);
+                alert("Error adding LTHX to MetaMask");
             }
         } else {
             alert("MetaMask not installed");
@@ -2678,7 +2787,8 @@
             footer_contact: "Contact", 
             footer_docs: "Documentation",
             footer_copyright: "© 2024 MineralX Holding. Tous droits réservés.",
-            lithix_desc: "Stablecoin indexé sur le lithium avec réserves réelles. Chaque token est adossé à du lithium physique vérifiable.",
+            nfx_desc: "Token indexé sur le pétrole Brent. Chaque NFX suit le prix du baril en temps réel via Chainlink oracle. Protégez-vous contre la volatilité des prix de l'énergie.",
+            lithix_desc: "Token indexé sur le lithium. Chaque LTHX suit le prix de la tonne de lithium via Chainlink oracle. Protégez votre portefeuille contre la volatilité des matières premières stratégiques.",
             bluecore_desc: "Stablecoin adossé au cobalt, métal stratégique pour la transition énergétique. Transparence totale des réserves.",
             ncore_desc: "Stablecoin adossé au nickel pour applications industrielles. Métal stratégique pour acier inoxydable et batteries.",
             urx_desc: "Stablecoin énergie uranium pour le secteur nucléaire. Adossé aux réserves stratégiques d'énergie.",
@@ -2913,7 +3023,8 @@
             footer_contact: "Contact",
             footer_docs: "Documentation",
             footer_copyright: "© 2024 MineralX Holding. All rights reserved.",
-            lithix_desc: "Lithium-indexed stablecoin with real reserves. Each token is backed by verifiable physical lithium.",
+            nfx_desc: "Token indexed to Brent crude oil. Each NFX tracks the real-time price of a barrel via Chainlink oracle. Hedge against energy price volatility.",
+            lithix_desc: "Token indexed to lithium. Each LTHX tracks the price of lithium per tonne via Chainlink oracle. Protect your portfolio against commodity volatility.",
             bluecore_desc: "Cobalt-backed stablecoin, strategic metal for energy transition. Complete transparency of reserves.",
             ncore_desc: "Nickel-backed stablecoin for industrial applications. Strategic metal for stainless steel and batteries.",
             urx_desc: "Uranium-energy stablecoin for nuclear power sector. Backed by strategic energy reserves.",
@@ -3148,7 +3259,8 @@
             footer_contact: "Контакты",
             footer_docs: "Документация", 
             footer_copyright: "© 2024 MineralX Holding. Все права защищены.",
-            lithix_desc: "Стейблкоин, индексированный на литий, с реальными резервами. Каждый токен обеспечен проверяемым физическим литием.",
+            nfx_desc: "Токен, привязанный к нефти Brent. Каждый NFX отслеживает цену барреля в реальном времени через оракул Chainlink. Защитите свой портфель от волатильности цен на энергоносители.",
+            lithix_desc: "Токен, привязанный к литию. Каждый LTHX отслеживает цену тонны лития через оракул Chainlink. Защитите свой портфель от волатильности цен на сырьевые товары.",
             bluecore_desc: "Стейблкоин, обеспеченный кобальтом, стратегическим металлом для энергетического перехода. Полная прозрачность резервов.",
             ncore_desc: "Стейблкоин, обеспеченный никелем, для промышленного применения. Стратегический металл для нержавеющей стали и аккумуляторов.",
             urx_desc: "Урановый стейблкоин для ядерной энергетики. Обеспечен стратегическими энергетическими резервами.",
